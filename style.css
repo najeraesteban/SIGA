@@ -6,6 +6,24 @@
     --radio-borde: 8px;
 }
 
+/* Estilos de la rama dev */
+#propiedades-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaciado-base);
+    justify-content: center;
+    padding: var(--espaciado-base);
+}
+
+#contratros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaciado-base);
+    justify-content: center;
+    padding: var(--espaciado-base);
+}
+
+/* Estilos de la rama feature/propietarios-pagos */
 #propietarios {
     display: flex;
     flex-wrap: wrap;
@@ -13,7 +31,8 @@
     justify-content: center;
     padding: var(--espaciado-base);
 }
-#pagos{
+
+#pagos {
     display: flex;
     flex-wrap: wrap;
     gap: var(--espaciado-base);
