@@ -5,3 +5,17 @@
     --espaciado-base: 1rem;
     --radio-borde: 8px;
 }
+#propiedades-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaciado-base);
+    justify-content: center;
+    padding: var(--espaciado-base);
+}
+#contratros{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaciado-base);
+    justify-content: center;
+    padding: var(--espaciado-base);
+}
