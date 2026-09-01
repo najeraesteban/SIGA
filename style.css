@@ -5,3 +5,18 @@
     --espaciado-base: 1rem;
     --radio-borde: 8px;
 }
+
+#propietarios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaciado-base);
+    justify-content: center;
+    padding: var(--espaciado-base);
+}
+#pagos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaciado-base);
+    justify-content: center;
+    padding: var(--espaciado-base);
+}
