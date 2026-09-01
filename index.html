@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIGA - Sistema de Gestión de Alquileres para Inmobiliarias</title>
-    <meta name="description" content="Administrá propiedades, contratos, pagos y vencimientos de tu inmobiliaria desde un solo panel.">
+    <meta name="description"
+        content="Administrá propiedades, contratos, pagos y vencimientos de tu inmobiliaria desde un solo panel.">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <section id="dashboard">
-    <h2>Panel General</h2>
-    <div class="dashboard-grid">
-        <article class="card">
-            <h3>Propiedades</h3>
-            <p class="numero">128</p>
-        </article>
-        <article class="card">
-            <h3>Alquiladas</h3>
-            <p class="numero">96</p>
-        </article>
-        <article class="card">
-            <h3>Disponibles</h3>
-            <p class="numero">24</p>
-        </article>
-        <article class="card">
-            <h3>En mantenimiento</h3>
-            <p class="numero">8</p>
-        </article>
-        <article class="card">
-            <h3>Contratos por vencer</h3>
-            <p class="numero">6</p>
-        </article>
-    </div>
-</section>
+        <h2>Panel General</h2>
+        <div class="dashboard-grid">
+            <article class="card">
+                <h3>Propiedades</h3>
+                <p class="numero">128</p>
+            </article>
+            <article class="card">
+                <h3>Alquiladas</h3>
+                <p class="numero">96</p>
+            </article>
+            <article class="card">
+                <h3>Disponibles</h3>
+                <p class="numero">24</p>
+            </article>
+            <article class="card">
+                <h3>En mantenimiento</h3>
+                <p class="numero">8</p>
+            </article>
+            <article class="card">
+                <h3>Contratos por vencer</h3>
+                <p class="numero">6</p>
+            </article>
+        </div>
+    </section>
     <header>
         <h1>SIGA</h1>
         <p>Sistema Integral de Gestión de Alquileres</p>
@@ -51,7 +54,7 @@
     <main>
         <section id="dashboard">
             <h2>Panel General</h2>
-           
+
         </section>
 
         <section id="propiedades">
@@ -73,9 +76,61 @@
         </section>
     </main>
 
+    <section id="propiedades">
+        <h2>Propiedades</h2>
+        <div class="propiedades-flex">
+            <article class="propiedad-card">
+                <h3>Departamento</h3>
+                <p>San Martín 1234, San Miguel de Tucumán</p>
+                <p>2 habitaciones · 1 baño · 65 m²</p>
+                <p class="precio">$450.000</p>
+                <span class="estado alquilada">Alquilada</span>
+            </article>
+            <article class="propiedad-card">
+                <h3>Casa</h3>
+                <p>Belgrano 500, Yerba Buena</p>
+                <p>3 habitaciones · 2 baños · 120 m²</p>
+                <p class="precio">$680.000</p>
+                <span class="estado disponible">Disponible</span>
+            </article>
+            <!-- Sumá más <article> según necesiten para la maqueta -->
+        </div>
+    </section>
+
+    <section id="contratos">
+        <h2>Contratos</h2>
+        <table class="contratos-tabla">
+            <thead>
+                <tr>
+                    <th>N° Contrato</th>
+                    <th>Propiedad</th>
+                    <th>Inquilino</th>
+                    <th>Inicio</th>
+                    <th>Fin</th>
+                    <th>Alquiler</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>154</td>
+                    <td>Depto. San Martín 1234</td>
+                    <td>María Gómez</td>
+                    <td>01/08/2026</td>
+                    <td>31/07/2028</td>
+                    <td>$450.000</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+
+
+
+
     <footer>
         <p>&copy; 2026 SIGA - Todos los derechos reservados</p>
     </footer>
 
 </body>
+
 </html>
