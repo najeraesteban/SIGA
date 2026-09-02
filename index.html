@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGA - Sistema de Gestión de Alquileres para Inmobiliarias</title>
+    <meta name="description"
+        content="Administrá propiedades, contratos, pagos y vencimientos de tu inmobiliaria desde un solo panel.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>SIGA</h1>
+        <p>Sistema Integral de Gestión de Alquileres</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#propiedades">Propiedades</a></li>
+            <li><a href="#contratos">Contratos</a></li>
+            <li><a href="#propietarios">Propietarios</a></li>
+            <li><a href="#pagos">Pagos</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="dashboard">
+            <h2>Panel General</h2>
+            <div class="dashboard-grid">
+                <article class="card">
+                    <h3>Propiedades</h3>
+                    <p class="numero">128</p>
+                </article>
+                <article class="card">
+                    <h3>Alquiladas</h3>
+                    <p class="numero">96</p>
+                </article>
+                <article class="card">
+                    <h3>Disponibles</h3>
+                    <p class="numero">24</p>
+                </article>
+                <article class="card">
+                    <h3>En mantenimiento</h3>
+                    <p class="numero">8</p>
+                </article>
+                <article class="card">
+                    <h3>Contratos por vencer</h3>
+                    <p class="numero">6</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="propiedades">
+            <h2>Propiedades</h2>
+            <div class="propiedades-flex">
+                <article class="propiedad-card">
+                    <h3>Departamento</h3>
+                    <p>San Martín 1234, San Miguel de Tucumán</p>
+                    <p>2 habitaciones · 1 baño · 65 m²</p>
+                    <p class="precio">$450.000</p>
+                    <span class="estado alquilada">Alquilada</span>
+                </article>
+                <article class="propiedad-card">
+                    <h3>Casa</h3>
+                    <p>Belgrano 500, Yerba Buena</p>
+                    <p>3 habitaciones · 2 baños · 120 m²</p>
+                    <p class="precio">$680.000</p>
+                    <span class="estado disponible">Disponible</span>
+                </article>
+                <!-- Sumá más <article> según necesiten para la maqueta -->
+            </div>
+        </section>
+
+        <section id="contratos">
+            <h2>Contratos</h2>
+            <table class="contratos-tabla">
+                <thead>
+                    <tr>
+                        <th>N° Contrato</th>
+                        <th>Propiedad</th>
+                        <th>Inquilino</th>
+                        <th>Inicio</th>
+                        <th>Fin</th>
+                        <th>Alquiler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>154</td>
+                        <td>Depto. San Martín 1234</td>
+                        <td>María Gómez</td>
+                        <td>01/08/2026</td>
+                        <td>31/07/2028</td>
+                        <td>$450.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="propietarios">
+            <h2>Propietarios e Inquilinos</h2>
+            <div class="personas-grid">
+                <article class="persona-card">
+                    <h3>Juan Pérez</h3>
+                    <p>Propietario</p>
+                    <p>DNI: 30.123.456</p>
+                    <p>Tel: 381-1234567</p>
+                </article>
+                <article class="persona-card">
+                    <h3>María Gómez</h3>
+                    <p>Inquilina</p>
+                    <p>DNI: 35.987.654</p>
+                    <p>Tel: 381-7654321</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="pagos">
+            <h2>Pagos y Vencimientos</h2>
+            <ul class="pagos-lista">
+                <li class="pago pendiente">
+                    <span>Contrato #154 — Agosto</span>
+                    <span>Vence: 10/08/2026</span>
+                    <span class="estado">Pendiente</span>
+                </li>
+                <li class="pago pagado">
+                    <span>Contrato #145 — Julio</span>
+                    <span>Pagado: 08/07/2026</span>
+                    <span class="estado">Pagado</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SIGA - Todos los derechos reservados</p>
+    </footer>
+</body>
+
+</html>
