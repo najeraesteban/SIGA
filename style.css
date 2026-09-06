@@ -1,41 +1,323 @@
+/* =========================================================
+   SIGA — Sistema Integral de Gestión de Alquileres
+   Paleta: pino oscuro + piedra clara + ocre para vencimientos
+   Tipografía: Source Serif 4 (títulos) + IBM Plex Sans (texto)
+   ========================================================= */
+
 :root {
-    --color-primario: #1e3a5f;
-    --color-secundario: #f4a261;
-    --fuente-principal: 'Segoe UI', sans-serif;
-    --espaciado-base: 1rem;
-    --radio-borde: 8px;
+    --tinta: #1B2420;
+    --piedra: #EDEFEA;
+    --superficie: #FFFFFF;
+    --borde: #D6D9D2;
+
+    --pino: #2F4A40;
+    --pino-claro: #4E6E61;
+
+    --ocre: #B9822E;
+    --ocre-suave: #F2E4C8;
+
+    --ladrillo: #A8493F;
+    --ladrillo-suave: #F1DCD8;
+
+    --verde-ok: #3E6B4F;
+    --verde-ok-suave: #DCE8DD;
+
+    --fuente-titulo: "Source Serif 4", Georgia, serif;
+    --fuente-texto: "IBM Plex Sans", Arial, sans-serif;
+
+    --ancho-nav: 15rem;
 }
 
-/* Estilos de la rama dev */
-#propiedades-flex {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--espaciado-base);
-    justify-content: center;
-    padding: var(--espaciado-base);
+* {
+    box-sizing: border-box;
 }
 
-#contratros {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--espaciado-base);
-    justify-content: center;
-    padding: var(--espaciado-base);
+body {
+    margin: 0;
+    background: var(--piedra);
+    color: var(--tinta);
+    font-family: var(--fuente-texto);
+    font-size: 16px;
+    line-height: 1.5;
 }
 
-/* Estilos de la rama feature/propietarios-pagos */
-#propietarios {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--espaciado-base);
-    justify-content: center;
-    padding: var(--espaciado-base);
+h2, h3 {
+    font-family: var(--fuente-titulo);
+    font-weight: 600;
+    margin: 0 0 1rem;
+    color: var(--tinta);
 }
 
-#pagos {
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+}
+
+p {
+    margin: 0.2rem 0;
+}
+
+a {
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------- Encabezado de marca (sidebar) ---------- */
+
+.marca {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--ancho-nav);
+    padding: 2rem 1.5rem 1rem;
+    background: var(--pino);
+    color: var(--piedra);
+}
+
+.marca-nombre {
+    font-family: var(--fuente-titulo);
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin: 0;
+}
+
+.marca-slogan {
+    font-size: 0.85rem;
+    color: var(--pino-claro);
+    margin-top: 0.35rem;
+}
+
+/* ---------- Navegación ---------- */
+
+.nav-principal {
+    position: fixed;
+    top: 6.5rem;
+    left: 0;
+    width: var(--ancho-nav);
+    bottom: 0;
+    background: var(--pino);
+    padding: 1rem 0;
+}
+
+.nav-principal a {
+    display: block;
+    padding: 0.65rem 1.5rem;
+    text-decoration: none;
+    color: var(--piedra);
+    border-left: 3px solid transparent;
+}
+
+.nav-principal a:hover,
+.nav-principal a:focus-visible {
+    background: rgba(255, 255, 255, 0.08);
+    border-left-color: var(--ocre);
+}
+
+/* ---------- Contenido principal ---------- */
+
+main {
+    margin-left: var(--ancho-nav);
+    padding: 2.5rem 3rem 4rem;
+    max-width: 62rem;
+}
+
+main section {
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--borde);
+}
+
+main section:first-child {
+    padding-top: 0;
+    border-top: none;
+}
+
+/* ---------- Panel general (resumen) ---------- */
+
+.resumen {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    gap: 1px;
+    background: var(--borde);
+    border: 1px solid var(--borde);
+}
+
+.resumen li {
+    background: var(--superficie);
+    padding: 1.25rem 1rem;
+}
+
+.resumen-numero {
+    font-family: var(--fuente-titulo);
+    font-size: 2.1rem;
+    font-weight: 600;
+    color: var(--pino);
+}
+
+.resumen-etiqueta {
+    font-size: 0.85rem;
+    color: var(--pino-claro);
+}
+
+/* ---------- Propiedades ---------- */
+
+.propiedades-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 1.25rem;
+}
+
+.propiedad {
+    border: 1px solid var(--borde);
+    background: var(--superficie);
+    padding: 1.25rem;
+}
+
+.precio {
+    font-family: var(--fuente-titulo);
+    font-size: 1.15rem;
+    color: var(--pino);
+    margin-top: 0.5rem;
+}
+
+.estado {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.15rem 0.6rem;
+    font-size: 0.8rem;
+    border: 1px solid transparent;
+}
+
+.estado-alquilada {
+    background: var(--verde-ok-suave);
+    color: var(--verde-ok);
+}
+
+.estado-disponible {
+    background: var(--ocre-suave);
+    color: var(--ocre);
+}
+
+/* ---------- Contratos ---------- */
+
+.contratos-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--superficie);
+}
+
+.contratos-tabla th,
+.contratos-tabla td {
+    text-align: left;
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid var(--borde);
+}
+
+.contratos-tabla th {
+    font-weight: 600;
+    color: var(--pino-claro);
+    font-size: 0.85rem;
+    border-bottom: 2px solid var(--pino);
+}
+
+/* ---------- Propietarios e inquilinos ---------- */
+
+.personas-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+    gap: 1.25rem;
+}
+
+.persona {
+    border: 1px solid var(--borde);
+    background: var(--superficie);
+    padding: 1.25rem;
+}
+
+/* ---------- Pagos y vencimientos ---------- */
+
+.pagos-lista li {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--espaciado-base);
-    justify-content: center;
-    padding: var(--espaciado-base);
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1rem;
+    background: var(--superficie);
+    border: 1px solid var(--borde);
+    border-top: none;
+}
+
+.pagos-lista li:first-child {
+    border-top: 1px solid var(--borde);
+}
+
+.pago-pendiente .estado {
+    background: var(--ladrillo-suave);
+    color: var(--ladrillo);
+}
+
+.pago-pagado .estado {
+    background: var(--verde-ok-suave);
+    color: var(--verde-ok);
+}
+
+/* ---------- Pie ---------- */
+
+footer {
+    margin-left: var(--ancho-nav);
+    padding: 1.5rem 3rem;
+    font-size: 0.85rem;
+    color: var(--pino-claro);
+}
+
+/* ---------- Accesibilidad ---------- */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--ocre);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 860px) {
+    :root {
+        --ancho-nav: 0px;
+    }
+
+    .marca,
+    .nav-principal {
+        position: static;
+        width: 100%;
+    }
+
+    .nav-principal {
+        overflow-x: auto;
+    }
+
+    .nav-principal ul {
+        display: flex;
+    }
+
+    main,
+    footer {
+        margin-left: 0;
+        padding: 2rem 1.25rem 3rem;
+    }
 }

@@ -7,43 +7,22 @@
     <title>SIGA - Sistema de Gestión de Alquileres para Inmobiliarias</title>
     <meta name="description"
         content="Administrá propiedades, contratos, pagos y vencimientos de tu inmobiliaria desde un solo panel.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <section id="dashboard">
-        <h2>Panel General</h2>
-        <div class="dashboard-grid">
-            <article class="card">
-                <h3>Propiedades</h3>
-                <p class="numero">128</p>
-            </article>
-            <article class="card">
-                <h3>Alquiladas</h3>
-                <p class="numero">96</p>
-            </article>
-            <article class="card">
-                <h3>Disponibles</h3>
-                <p class="numero">24</p>
-            </article>
-            <article class="card">
-                <h3>En mantenimiento</h3>
-                <p class="numero">8</p>
-            </article>
-            <article class="card">
-                <h3>Contratos por vencer</h3>
-                <p class="numero">6</p>
-            </article>
-        </div>
-    </section>
-    <header>
-        <h1>SIGA</h1>
-        <p>Sistema Integral de Gestión de Alquileres</p>
+
+    <header class="marca">
+        <p class="marca-nombre">SIGA</p>
+        <p class="marca-slogan">Sistema Integral de Gestión de Alquileres</p>
     </header>
 
-    <nav>
+    <nav class="nav-principal">
         <ul>
-            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#dashboard">Panel</a></li>
             <li><a href="#propiedades">Propiedades</a></li>
             <li><a href="#contratos">Contratos</a></li>
             <li><a href="#propietarios">Propietarios</a></li>
@@ -52,119 +31,117 @@
     </nav>
 
     <main>
-        <section id="dashboard">
-            <h2>Panel General</h2>
-
+        <section id="dashboard" aria-labelledby="dashboard-titulo">
+            <h2 id="dashboard-titulo">Panel general</h2>
+            <ul class="resumen">
+                <li>
+                    <p class="resumen-numero">128</p>
+                    <p class="resumen-etiqueta">Propiedades</p>
+                </li>
+                <li>
+                    <p class="resumen-numero">96</p>
+                    <p class="resumen-etiqueta">Alquiladas</p>
+                </li>
+                <li>
+                    <p class="resumen-numero">24</p>
+                    <p class="resumen-etiqueta">Disponibles</p>
+                </li>
+                <li>
+                    <p class="resumen-numero">8</p>
+                    <p class="resumen-etiqueta">En mantenimiento</p>
+                </li>
+                <li>
+                    <p class="resumen-numero">6</p>
+                    <p class="resumen-etiqueta">Contratos por vencer</p>
+                </li>
+            </ul>
         </section>
 
-        <section id="propiedades">
-            <h2>Propiedades</h2>
-            <!-- Cards de propiedades con Flexbox -->
+        <section id="propiedades" aria-labelledby="propiedades-titulo">
+            <h2 id="propiedades-titulo">Propiedades</h2>
+            <ul class="propiedades-lista">
+                <li class="propiedad">
+                    <h3>Departamento</h3>
+                    <p>San Martín 1234, San Miguel de Tucumán</p>
+                    <p>2 habitaciones · 1 baño · 65 m²</p>
+                    <p class="precio">$450.000</p>
+                    <p class="estado estado-alquilada">Alquilada</p>
+                </li>
+                <li class="propiedad">
+                    <h3>Casa</h3>
+                    <p>Belgrano 500, Yerba Buena</p>
+                    <p>3 habitaciones · 2 baños · 120 m²</p>
+                    <p class="precio">$680.000</p>
+                    <p class="estado estado-disponible">Disponible</p>
+                </li>
+                <!-- Sumá más <li class="propiedad"> según necesiten para la maqueta -->
+            </ul>
         </section>
 
-        <section id="contratos">
-            <h2>Contratos</h2>
-            <!-- Listado de contratos -->
+        <section id="contratos" aria-labelledby="contratos-titulo">
+            <h2 id="contratos-titulo">Contratos</h2>
+            <table class="contratos-tabla">
+                <thead>
+                    <tr>
+                        <th scope="col">N° contrato</th>
+                        <th scope="col">Propiedad</th>
+                        <th scope="col">Inquilino</th>
+                        <th scope="col">Inicio</th>
+                        <th scope="col">Fin</th>
+                        <th scope="col">Alquiler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>154</td>
+                        <td>Depto. San Martín 1234</td>
+                        <td>María Gómez</td>
+                        <td>01/08/2026</td>
+                        <td>31/07/2028</td>
+                        <td>$450.000</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
-        <section id="propietarios">
-            <h2>Propietarios e Inquilinos</h2>
+        <section id="propietarios" aria-labelledby="propietarios-titulo">
+            <h2 id="propietarios-titulo">Propietarios e inquilinos</h2>
+            <ul class="personas-lista">
+                <li class="persona">
+                    <h3>Juan Pérez</h3>
+                    <p>Propietario</p>
+                    <p>DNI: 30.123.456</p>
+                    <p>Tel: 381-1234567</p>
+                </li>
+                <li class="persona">
+                    <h3>María Gómez</h3>
+                    <p>Inquilina</p>
+                    <p>DNI: 35.987.654</p>
+                    <p>Tel: 381-7654321</p>
+                </li>
+            </ul>
         </section>
 
-        <section id="pagos">
-            <h2>Pagos y Vencimientos</h2>
+        <section id="pagos" aria-labelledby="pagos-titulo">
+            <h2 id="pagos-titulo">Pagos y vencimientos</h2>
+            <ul class="pagos-lista">
+                <li class="pago pago-pendiente">
+                    <span>Contrato #154 — Agosto</span>
+                    <span>Vence: 10/08/2026</span>
+                    <span class="estado">Pendiente</span>
+                </li>
+                <li class="pago pago-pagado">
+                    <span>Contrato #145 — Julio</span>
+                    <span>Pagado: 08/07/2026</span>
+                    <span class="estado">Pagado</span>
+                </li>
+            </ul>
         </section>
     </main>
 
-    <section id="propiedades">
-        <h2>Propiedades</h2>
-        <div class="propiedades-flex">
-            <article class="propiedad-card">
-                <h3>Departamento</h3>
-                <p>San Martín 1234, San Miguel de Tucumán</p>
-                <p>2 habitaciones · 1 baño · 65 m²</p>
-                <p class="precio">$450.000</p>
-                <span class="estado alquilada">Alquilada</span>
-            </article>
-            <article class="propiedad-card">
-                <h3>Casa</h3>
-                <p>Belgrano 500, Yerba Buena</p>
-                <p>3 habitaciones · 2 baños · 120 m²</p>
-                <p class="precio">$680.000</p>
-                <span class="estado disponible">Disponible</span>
-            </article>
-            <!-- Sumá más <article> según necesiten para la maqueta -->
-        </div>
-    </section>
-
-    <section id="contratos">
-        <h2>Contratos</h2>
-        <table class="contratos-tabla">
-            <thead>
-                <tr>
-                    <th>N° Contrato</th>
-                    <th>Propiedad</th>
-                    <th>Inquilino</th>
-                    <th>Inicio</th>
-                    <th>Fin</th>
-                    <th>Alquiler</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>154</td>
-                    <td>Depto. San Martín 1234</td>
-                    <td>María Gómez</td>
-                    <td>01/08/2026</td>
-                    <td>31/07/2028</td>
-                    <td>$450.000</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-
-
-
-
     <footer>
-        <p>&copy; 2026 SIGA - Todos los derechos reservados</p>
+        <p>&copy; 2026 SIGA — Todos los derechos reservados</p>
     </footer>
-
-    <section id="propietarios">
-    <h2>Propietarios e Inquilinos</h2>
-    <div class="personas-grid">
-        <article class="persona-card">
-            <h3>Juan Pérez</h3>
-            <p>Propietario</p>
-            <p>DNI: 30.123.456</p>
-            <p>Tel: 381-1234567</p>
-        </article>
-        <article class="persona-card">
-            <h3>María Gómez</h3>
-            <p>Inquilina</p>
-            <p>DNI: 35.987.654</p>
-            <p>Tel: 381-7654321</p>
-        </article>
-    </div>
-</section>
-
-<section id="pagos">
-    <h2>Pagos y Vencimientos</h2>
-    <ul class="pagos-lista">
-        <li class="pago pendiente">
-            <span>Contrato #154 — Agosto</span>
-            <span>Vence: 10/08/2026</span>
-            <span class="estado">Pendiente</span>
-        </li>
-        <li class="pago pagado">
-            <span>Contrato #145 — Julio</span>
-            <span>Pagado: 08/07/2026</span>
-            <span class="estado">Pagado</span>
-        </li>
-    </ul>
-</section>
-
 
 </body>
 
