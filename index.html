@@ -5,22 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIGA - Sistema de Gestión de Alquileres para Inmobiliarias</title>
-    <meta name="description"
-        content="Administrá propiedades, contratos, pagos y vencimientos de tu inmobiliaria desde un solo panel.">
-    <meta name="description" content="Alquileres en Tucuman">
+    <meta name="description" content="Administrá propiedades, contratos, pagos y vencimientos de tu inmobiliaria desde un solo panel.">
     <meta name="author" content="SIGA">
     <meta name="robots" content="index, follow">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <h1>SIGA</h1>
-        <p>Sistema Integral de Gestión de Alquileres</p>
-    </header>
+    <div class="marca">
+        <p class="marca-nombre">SIGA</p>
+        <p class="marca-slogan">Sistema Integral de Gestión de Alquileres</p>
+    </div>
 
     <nav class="nav-principal">
         <ul>
@@ -30,53 +28,52 @@
             <li><a href="#propietarios">Propietarios</a></li>
             <li><a href="#pagos">Pagos</a></li>
             <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-
         </ul>
     </nav>
 
     <main>
         <section id="dashboard">
             <h2>Panel General</h2>
-            <div class="dashboard-grid">
-                <article class="card">
-                    <h3>Propiedades</h3>
-                    <p class="numero">128</p>
-                </article>
-                <article class="card">
-                    <h3>Alquiladas</h3>
-                    <p class="numero">96</p>
-                </article>
-                <article class="card">
-                    <h3>Disponibles</h3>
-                    <p class="numero">24</p>
-                </article>
-                <article class="card">
-                    <h3>En mantenimiento</h3>
-                    <p class="numero">8</p>
-                </article>
-                <article class="card">
-                    <h3>Contratos por vencer</h3>
-                    <p class="numero">6</p>
-                </article>
-            </div>
+            <ul class="resumen">
+                <li>
+                    <p class="resumen-numero">128</p>
+                    <p class="resumen-etiqueta">Propiedades</p>
+                </li>
+                <li>
+                    <p class="resumen-numero">96</p>
+                    <p class="resumen-etiqueta">Alquiladas</p>
+                </li>
+                <li>
+                    <p class="resumen-numero">24</p>
+                    <p class="resumen-etiqueta">Disponibles</p>
+                </li>
+                <li>
+                    <p class="resumen-numero">8</p>
+                    <p class="resumen-etiqueta">En mantenimiento</p>
+                </li>
+                <li>
+                    <p class="resumen-numero">6</p>
+                    <p class="resumen-etiqueta">Contratos por vencer</p>
+                </li>
+            </ul>
         </section>
 
         <section id="propiedades">
             <h2>Propiedades</h2>
-            <div class="propiedades-flex">
-                <article class="propiedad-card">
+            <div class="propiedades-lista">
+                <article class="propiedad">
                     <h3>Departamento</h3>
                     <p>San Martín 1234, San Miguel de Tucumán</p>
                     <p>2 habitaciones · 1 baño · 65 m²</p>
                     <p class="precio">$450.000</p>
-                    <span class="estado alquilada">Alquilada</span>
+                    <span class="estado estado-alquilada">Alquilada</span>
                 </article>
-                <article class="propiedad-card">
+                <article class="propiedad">
                     <h3>Casa</h3>
                     <p>Belgrano 500, Yerba Buena</p>
                     <p>3 habitaciones · 2 baños · 120 m²</p>
                     <p class="precio">$680.000</p>
-                    <span class="estado disponible">Disponible</span>
+                    <span class="estado estado-disponible">Disponible</span>
                 </article>
                 <!-- Sumá más <article> según necesiten para la maqueta -->
             </div>
@@ -110,14 +107,14 @@
 
         <section id="propietarios">
             <h2>Propietarios e Inquilinos</h2>
-            <div class="personas-grid">
-                <article class="persona-card">
+            <div class="personas-lista">
+                <article class="persona">
                     <h3>Juan Pérez</h3>
                     <p>Propietario</p>
                     <p>DNI: 30.123.456</p>
                     <p>Tel: 381-1234567</p>
                 </article>
-                <article class="persona-card">
+                <article class="persona">
                     <h3>María Gómez</h3>
                     <p>Inquilina</p>
                     <p>DNI: 35.987.654</p>
@@ -129,17 +126,71 @@
         <section id="pagos">
             <h2>Pagos y Vencimientos</h2>
             <ul class="pagos-lista">
-                <li class="pago pendiente">
+                <li class="pago-pendiente">
                     <span>Contrato #154 — Agosto</span>
                     <span>Vence: 10/08/2026</span>
                     <span class="estado">Pendiente</span>
                 </li>
-                <li class="pago pagado">
+                <li class="pago-pagado">
                     <span>Contrato #145 — Julio</span>
                     <span>Pagado: 08/07/2026</span>
                     <span class="estado">Pagado</span>
                 </li>
             </ul>
+        </section>
+
+        <section id="sobre-nosotros">
+            <h2>Sobre Nosotros</h2>
+
+            <p>
+                SIGA nace como Trabajo Final Integrador de la carrera de
+                Programación en la Universidad Tecnológica Nacional —
+                Facultad Regional Tucumán, desarrollado por un equipo de
+                tres estudiantes con el objetivo de aplicar de forma
+                integral los conocimientos adquiridos a lo largo de la
+                carrera: desarrollo frontend, diseño de bases de datos
+                relacionales y trabajo colaborativo mediante control de
+                versiones.
+            </p>
+
+            <p>
+                El proyecto surge de una problemática identificada en el
+                rubro inmobiliario: la gestión de propiedades, contratos y
+                pagos suele depender de planillas dispersas y procesos
+                manuales, lo que genera errores, pérdida de información y
+                dificultad para hacer seguimiento de vencimientos. SIGA
+                propone centralizar toda esa gestión en un sistema único,
+                pensado para el uso interno de una inmobiliaria y sus
+                empleados.
+            </p>
+
+            <p>
+                Más allá de su valor académico, el equipo encaró SIGA con
+                una perspectiva de proyecto real: no como un ejercicio
+                aislado, sino como una base funcional con potencial de
+                evolucionar hacia un producto utilizable en el mercado.
+            </p>
+
+            <div class="personas-lista">
+                <article class="persona">
+                    <h3>Esteban Nájera</h3>
+                    <p>[Tu texto de "sobre mí" acá]</p>
+                </article>
+                <article class="persona">
+                    <h3>Magui [Apellido]</h3>
+                    <p>[Su texto acá]</p>
+                </article>
+                <article class="persona">
+                    <h3>Claudia [Apellido]</h3>
+                    <p>[Su texto acá]</p>
+                </article>
+            </div>
+
+            <p>
+                <em>Agradecemos a la profesora Georgina Costilla, docente
+                de Programación IV, por su acompañamiento y guía a lo
+                largo del desarrollo de este proyecto.</em>
+            </p>
         </section>
     </main>
 

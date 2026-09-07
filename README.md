@@ -33,27 +33,28 @@ El sistema contempla dos roles de usuario:
 
 ## ¿Dónde utilizaron Flexbox?
 
-En la sección **Propiedades**, para organizar las tarjetas de propiedades en
-fila con ajuste automático (`flex-wrap`) según el ancho de pantalla; también
-en la barra de navegación y en los ítems de la lista de pagos.
+En la lista de **Pagos y Vencimientos**, para organizar cada ítem con sus
+datos (contrato, vencimiento, estado) distribuidos y alineados de forma
+flexible según el ancho de pantalla.
 
 ## ¿Dónde utilizaron Grid?
 
-En el **Dashboard**, para distribuir las tarjetas de indicadores generales
-(propiedades totales, alquiladas, disponibles, en mantenimiento y contratos
-por vencer) en una grilla de columnas.
+En el **Dashboard** (resumen general) y en las secciones de **Propiedades**
+y **Propietarios**, para distribuir tarjetas en columnas que se adaptan
+automáticamente según el espacio disponible.
 
 ## ¿Qué variables CSS crearon?
 
-`--color-primario`, `--color-secundario`, `--fuente-principal`,
-`--espaciado-base` y `--radio-borde`, definidas en `:root` para mantener
-consistencia visual en todo el sitio y facilitar cambios de estilo globales.
+Colores de la paleta (`--pino`, `--ocre`, `--ladrillo`, `--verde-ok`, entre
+otros), tipografías (`--fuente-titulo`, `--fuente-texto`), y variables de
+layout (`--ancho-nav`, `--radio-borde`, `--sombra-card`), definidas en
+`:root` para mantener consistencia visual y facilitar cambios globales.
 
 ## ¿Cómo implementaron el Responsive Design?
 
-Mediante Media Queries en los breakpoints de tablet (768px) y celular
-(480px), ajustando la cantidad de columnas del Grid del dashboard y la
-disposición de la navegación y los pagos de fila a columna.
+Mediante Media Queries en los breakpoints de 860px (donde la barra lateral
+fija pasa a ser una barra horizontal) y 480px (ajustes de tipografía y
+disposición para celulares).
 
 ## Estructura del proyecto
 
