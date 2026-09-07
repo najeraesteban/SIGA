@@ -100,7 +100,7 @@ ul {
 
 .nav-principal {
     position: fixed;
-    top: 6.5rem;
+    top: 8.5rem;
     left: 0;
     width: var(--ancho-nav);
     bottom: 0;
@@ -153,6 +153,12 @@ main section:first-child {
 .resumen li {
     background: var(--superficie);
     padding: 1.25rem 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resumen li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .resumen-numero {
@@ -186,6 +192,12 @@ main section:first-child {
     font-size: 1.15rem;
     color: var(--pino);
     margin-top: 0.5rem;
+}
+
+.propiedad img {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
 }
 
 .estado {
