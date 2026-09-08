@@ -1,9 +1,31 @@
+/* =========================================================
+   SIGA — Sistema Integral de Gestión de Alquileres
+   Paleta: pino oscuro + piedra clara + ocre para vencimientos
+   Tipografía: Source Serif 4 (títulos) + IBM Plex Sans (texto)
+   ========================================================= */
+
 :root {
-    --color-primario: #1e3a5f;
-    --color-secundario: #f4a261;
-    --fuente-principal: 'Segoe UI', sans-serif;
-    --espaciado-base: 1rem;
-    --radio-borde: 8px;
+    --tinta: #1B2420;
+    --piedra: #EDEFEA;
+    --superficie: #FFFFFF;
+    --borde: #D6D9D2;
+
+    --pino: #2F4A40;
+    --pino-claro: #4E6E61;
+
+    --ocre: #B9822E;
+    --ocre-suave: #F2E4C8;
+
+    --ladrillo: #A8493F;
+    --ladrillo-suave: #F1DCD8;
+
+    --verde-ok: #3E6B4F;
+    --verde-ok-suave: #DCE8DD;
+
+    --fuente-titulo: "Source Serif 4", Georgia, serif;
+    --fuente-texto: "IBM Plex Sans", Arial, sans-serif;
+
+    --ancho-nav: 15rem;
 }
 
 * {
