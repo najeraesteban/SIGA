@@ -3,8 +3,8 @@
 ## Integrantes
 
 - Esteban Nájera
-- Magui [Apellido]
-- Claudia [Apellido]
+- Magali Guerrero
+- Claudia Lopez
 
 **Institución:** Universidad Tecnológica Nacional — Facultad Regional Tucumán (UTN FRT)
 **Carrera:** Tecnicatura/Ingeniería en Programación
