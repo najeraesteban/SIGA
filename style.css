@@ -1,8 +1,3 @@
-/* =========================================================
-   SIGA — Sistema Integral de Gestión de Alquileres
-   Paleta: pino oscuro + piedra clara + ocre para vencimientos
-   Tipografía: Source Serif 4 (títulos) + IBM Plex Sans (texto)
-   ========================================================= */
 
 :root {
     --tinta: #1B2420;
@@ -26,6 +21,8 @@
     --fuente-texto: "IBM Plex Sans", Arial, sans-serif;
 
     --ancho-nav: 15rem;
+    --radio-borde: 8px;
+    --sombra-card: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -35,150 +32,303 @@
 }
 
 body {
-    font-family: var(--fuente-principal);
+    background: var(--piedra);
+    color: var(--tinta);
+    font-family: var(--fuente-texto);
+    font-size: 16px;
+    line-height: 1.5;
 }
 
-header {
-    background-color: var(--color-primario);
-    color: white;
-    text-align: center;
-    padding: var(--espaciado-base);
+h1, h2, h3 {
+    font-family: var(--fuente-titulo);
+    font-weight: 600;
+    margin: 0 0 1rem;
+    color: var(--tinta);
 }
 
-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--espaciado-base);
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+}
+
+p {
+    margin: 0.2rem 0;
+}
+
+a {
+    color: inherit;
+}
+
+ul {
     list-style: none;
-    background-color: var(--color-secundario);
-    padding: var(--espaciado-base);
 }
 
-nav a {
+/* ---------- Sidebar: marca + nav ---------- */
+/*
+.marca {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--ancho-nav);
+    min-height: 12vh;
+    padding: 2rem 1.5rem 1rem;
+    background: var(--pino);
+    color: var(--piedra);
+}
+
+.marca-nombre {
+    font-family: var(--fuente-titulo);
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.marca-slogan {
+    font-size: 0.85rem;
+    color: var(--pino-claro);
+    margin-top: 0.35rem;
+}
+
+.nav-principal {
+    position: fixed;
+    top: 6.5rem;
+    left: 0;
+    width: var(--ancho-nav);
+    bottom: 0;
+    background: var(--pino);
+    padding: 1rem 0;
+}
+
+.nav-principal a {
+    display: block;
+    padding: 0.65rem 1.5rem;
     text-decoration: none;
-    color: #2b2b2b;
-    font-weight: bold;
+    color: var(--piedra);
+    border-left: 3px solid transparent;
 }
 
-.dashboard-grid {
+.nav-principal a:hover,
+.nav-principal a:focus-visible {
+    background: rgba(255, 255, 255, 0.08);
+    border-left-color: var(--ocre);
+}
+
+
+main {
+    margin-left: var(--ancho-nav);
+    padding: 2.5rem 3rem 4rem;
+    max-width: 90%;
+}
+
+main section {
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--borde);
+}
+
+main section:first-child {
+    padding-top: 0;
+    border-top: none;
+}
+
+/*
+.resumen {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--espaciado-base);
-    padding: var(--espaciado-base);
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    gap: 1px;
+    background: var(--borde);
+    border: 1px solid var(--borde);
 }
 
-.card {
-    background-color: white;
+.resumen li {
+    background: var(--superficie);
+    padding: 1.25rem 1rem;
+}
+
+.resumen-numero {
+    font-family: var(--fuente-titulo);
+    font-size: 2.1rem;
+    font-weight: 600;
+    color: var(--pino);
+}
+
+.resumen-etiqueta {
+    font-size: 0.85rem;
+    color: var(--pino-claro);
+}
+*/
+/* ---------- Propiedades ---------- */
+
+.propiedades-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 1.25rem;
+}
+
+.propiedad {
+    border: 1px solid var(--borde);
+    background: var(--superficie);
     border-radius: var(--radio-borde);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    padding: var(--espaciado-base);
-    text-align: center;
+    box-shadow: var(--sombra-card);
+    padding: 1.25rem;
 }
 
-/* Estilos de la rama dev */
-.propiedades-flex {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--espaciado-base);
-    justify-content: center;
-    padding: var(--espaciado-base);
+.precio {
+    font-family: var(--fuente-titulo);
+    font-size: 1.15rem;
+    color: var(--pino);
+    margin-top: 0.5rem;
 }
 
-.propiedad-card {
-    background-color: white;
-    border: 1px solid #ddd;
+.estado {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.15rem 0.6rem;
+    font-size: 0.8rem;
     border-radius: var(--radio-borde);
-    padding: var(--espaciado-base);
-    flex: 1 1 260px;
 }
 
-#contratos {
-    padding: var(--espaciado-base);
+.estado-alquilada {
+    background: var(--verde-ok-suave);
+    color: var(--verde-ok);
 }
+
+.estado-disponible {
+    background: var(--ocre-suave);
+    color: var(--ocre);
+}
+
+/* ---------- Contratos ---------- */
 
 .contratos-tabla {
     width: 100%;
     border-collapse: collapse;
-    background-color: white;
+    background: var(--superficie);
 }
 
 .contratos-tabla th,
 .contratos-tabla td {
-    padding: 0.5rem 1rem;
-    border-bottom: 1px solid #eee;
     text-align: left;
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid var(--borde);
 }
 
-/* Estilos de la rama feature/propietarios-pagos */
-#propietarios {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--espaciado-base);
-    justify-content: center;
-    padding: var(--espaciado-base);
+.contratos-tabla th {
+    font-weight: 600;
+    color: var(--pino-claro);
+    font-size: 0.85rem;
+    border-bottom: 2px solid var(--pino);
 }
 
-.persona-card {
-    background-color: white;
+/* ---------- Propietarios / Sobre Nosotros ---------- */
+
+.personas-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+    gap: 1.25rem;
+}
+
+.persona {
+    border: 1px solid var(--borde);
+    background: var(--superficie);
     border-radius: var(--radio-borde);
-    padding: var(--espaciado-base);
-    flex: 1 1 220px;
+    box-shadow: var(--sombra-card);
+    padding: 1.25rem;
 }
 
-#pagos {
+/* ---------- Pagos ---------- */
+
+.pagos-lista li {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--espaciado-base);
-    justify-content: center;
-    padding: var(--espaciado-base);
-}
-
-.pagos-lista {
-    list-style: none;
-    width: 100%;
-}
-
-.pago {
-    display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-    background-color: white;
-    padding: var(--espaciado-base);
-    margin-bottom: 0.5rem;
-    border-left: 5px solid #2a9d8f;
-    border-radius: var(--radio-borde);
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1rem;
+    background: var(--superficie);
+    border: 1px solid var(--borde);
+    border-top: none;
 }
 
-.pago.pendiente {
-    border-left-color: #e76f51;
+.pagos-lista li:first-child {
+    border-top: 1px solid var(--borde);
 }
+
+.pago-pendiente .estado {
+    background: var(--ladrillo-suave);
+    color: var(--ladrillo);
+}
+
+.pago-pagado .estado {
+    background: var(--verde-ok-suave);
+    color: var(--verde-ok);
+}
+
+/* ---------- Footer ---------- */
 
 footer {
-    background-color: var(--color-primario);
-    color: white;
-    text-align: center;
-    padding: var(--espaciado-base);
+    margin-left: var(--ancho-nav);
+    padding: 1.5rem 3rem;
+    font-size: 0.85rem;
+    color: var(--pino-claro);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .dashboard-grid {
-        grid-template-columns: repeat(2, 1fr);
+/* ---------- Accesibilidad ---------- */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--ocre);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 860px) {
+    :root {
+        --ancho-nav: 0px;
+    }
+
+    .marca,
+    .nav-principal {
+        position: static;
+        width: 100%;
+    }
+
+    .nav-principal {
+        overflow-x: auto;
+    }
+
+    .nav-principal ul {
+        display: flex;
+    }
+
+    main,
+    footer {
+        margin-left: 0;
+        padding: 2rem 1.25rem 3rem;
     }
 }
 
 @media (max-width: 480px) {
-    .dashboard-grid {
+    .resumen {
         grid-template-columns: 1fr;
     }
 
-    nav ul {
+    .pagos-lista li {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
 
-    .pago {
-        flex-direction: column;
+    h2 {
+        font-size: 1.25rem;
     }
 }
