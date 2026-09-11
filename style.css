@@ -1,8 +1,3 @@
-/* =========================================================
-   SIGA — Sistema Integral de Gestión de Alquileres
-   Paleta: pino oscuro + piedra clara + ocre para vencimientos
-   Tipografía: Source Serif 4 (títulos) + IBM Plex Sans (texto)
-   ========================================================= */
 
 :root {
     --tinta: #1B2420;
@@ -26,14 +21,17 @@
     --fuente-texto: "IBM Plex Sans", Arial, sans-serif;
 
     --ancho-nav: 15rem;
+    --radio-borde: 8px;
+    --sombra-card: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
     background: var(--piedra);
     color: var(--tinta);
     font-family: var(--fuente-texto);
@@ -41,7 +39,7 @@ body {
     line-height: 1.5;
 }
 
-h2, h3 {
+h1, h2, h3 {
     font-family: var(--fuente-titulo);
     font-weight: 600;
     margin: 0 0 1rem;
@@ -66,17 +64,16 @@ a {
 
 ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
-/* ---------- Encabezado de marca (sidebar) ---------- */
-
+/* ---------- Sidebar: marca + nav ---------- */
+/*
 .marca {
     position: fixed;
     top: 0;
     left: 0;
     width: var(--ancho-nav);
+    min-height: 12vh;
     padding: 2rem 1.5rem 1rem;
     background: var(--pino);
     color: var(--piedra);
@@ -87,7 +84,6 @@ ul {
     font-size: 1.6rem;
     font-weight: 600;
     letter-spacing: 0.02em;
-    margin: 0;
 }
 
 .marca-slogan {
@@ -96,11 +92,9 @@ ul {
     margin-top: 0.35rem;
 }
 
-/* ---------- Navegación ---------- */
-
 .nav-principal {
     position: fixed;
-    top: 8.5rem;
+    top: 6.5rem;
     left: 0;
     width: var(--ancho-nav);
     bottom: 0;
@@ -122,12 +116,11 @@ ul {
     border-left-color: var(--ocre);
 }
 
-/* ---------- Contenido principal ---------- */
 
 main {
     margin-left: var(--ancho-nav);
     padding: 2.5rem 3rem 4rem;
-    max-width: 62rem;
+    max-width: 90%;
 }
 
 main section {
@@ -140,8 +133,7 @@ main section:first-child {
     border-top: none;
 }
 
-/* ---------- Panel general (resumen) ---------- */
-
+/*
 .resumen {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
@@ -153,12 +145,6 @@ main section:first-child {
 .resumen li {
     background: var(--superficie);
     padding: 1.25rem 1rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.resumen li:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .resumen-numero {
@@ -172,7 +158,7 @@ main section:first-child {
     font-size: 0.85rem;
     color: var(--pino-claro);
 }
-
+*/
 /* ---------- Propiedades ---------- */
 
 .propiedades-lista {
@@ -184,6 +170,8 @@ main section:first-child {
 .propiedad {
     border: 1px solid var(--borde);
     background: var(--superficie);
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-card);
     padding: 1.25rem;
 }
 
@@ -194,18 +182,12 @@ main section:first-child {
     margin-top: 0.5rem;
 }
 
-.propiedad img {
-    width: 250px;
-    height: 180px;
-    object-fit: cover;
-}
-
 .estado {
     display: inline-block;
     margin-top: 0.5rem;
     padding: 0.15rem 0.6rem;
     font-size: 0.8rem;
-    border: 1px solid transparent;
+    border-radius: var(--radio-borde);
 }
 
 .estado-alquilada {
@@ -240,7 +222,7 @@ main section:first-child {
     border-bottom: 2px solid var(--pino);
 }
 
-/* ---------- Propietarios e inquilinos ---------- */
+/* ---------- Propietarios / Sobre Nosotros ---------- */
 
 .personas-lista {
     display: grid;
@@ -251,10 +233,12 @@ main section:first-child {
 .persona {
     border: 1px solid var(--borde);
     background: var(--superficie);
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-card);
     padding: 1.25rem;
 }
 
-/* ---------- Pagos y vencimientos ---------- */
+/* ---------- Pagos ---------- */
 
 .pagos-lista li {
     display: flex;
@@ -282,7 +266,7 @@ main section:first-child {
     color: var(--verde-ok);
 }
 
-/* ---------- Pie ---------- */
+/* ---------- Footer ---------- */
 
 footer {
     margin-left: var(--ancho-nav);
@@ -333,12 +317,18 @@ button:focus-visible {
         padding: 2rem 1.25rem 3rem;
     }
 }
-/*propiedades-lista { ... }
-.propiedad { ... }
-.precio { ... }
-.estado { ... }
-.estado-alquilada { ... }
-.estado-disponible { ... }
-.contratos-tabla { ... }
-.contratos-tabla th, .contratos-tabla td { ... }
-.contratos-tabla th { ... }*/
+
+@media (max-width: 480px) {
+    .resumen {
+        grid-template-columns: 1fr;
+    }
+
+    .pagos-lista li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+}
