@@ -5,23 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIGA - Sistema de Gestión de Alquileres para Inmobiliarias</title>
-    <meta name="description"
-        content="Administrá propiedades, contratos, pagos y vencimientos de tu inmobiliaria desde un solo panel.">
-    <meta name="description" content="Alquileres en Tucuman">
+    <meta name="description" content="Administrá propiedades, contratos, pagos y vencimientos de tu inmobiliaria desde un solo panel.">
     <meta name="author" content="SIGA">
     <meta name="robots" content="index, follow">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-    <header class="marca">
+    <div class="marca">
         <p class="marca-nombre">SIGA</p>
         <p class="marca-slogan">Sistema Integral de Gestión de Alquileres</p>
-    </header>
+    </div>
 
     <nav class="nav-principal">
         <ul>
@@ -31,13 +28,12 @@
             <li><a href="#propietarios">Propietarios</a></li>
             <li><a href="#pagos">Pagos</a></li>
             <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-
         </ul>
     </nav>
 
     <main>
-        <section id="dashboard" aria-labelledby="dashboard-titulo">
-            <h2 id="dashboard-titulo">PANEL GENERAL</h2>
+        <section id="dashboard">
+            <h2>Panel General</h2>
             <ul class="resumen">
                 <li>
                     <p class="resumen-numero">128</p>
@@ -62,89 +58,98 @@
             </ul>
         </section>
 
-        <section id="propiedades" aria-labelledby="propiedades-titulo">
-            <h2 id="propiedades-titulo">Propiedades</h2>
-            <ul class="propiedades-lista">
-                <li class="propiedad">
-                    <img src="img/dpto.jpg" alt="departamento">
-                    <h3>Departamento</h3>
-                    <p>San Martín 1234, San Miguel de Tucumán</p>
-                    <p>2 habitaciones · 1 baño · 65 m²</p>
-                    <p class="precio">$450.000</p>
-                    <p class="estado estado-alquilada">Alquilada</p>
-                </li>
-                <li class="propiedad">
-                    <img src="img/casa.jpg" alt="casa">
-                    <h3>Casa</h3>
-                    <p>Belgrano 500, Yerba Buena</p>
-                    <p>3 habitaciones · 2 baños · 120 m²</p>
-                    <p class="precio">$680.000</p>
-                    <p class="estado estado-disponible">Disponible</p>
-                </li>
-                <!-- Sumá más <li class="propiedad"> según necesiten para la maqueta -->
-            </ul>
-        </section>
+        <section id="propiedades">
+    <h2>Propiedades</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title h5">Departamento</h3>
+                    <p class="card-text mb-1">San Martín 1234, San Miguel de Tucumán</p>
+                    <p class="card-text mb-1">2 habitaciones · 1 baño · 65 m²</p>
+                    <p class="card-text fw-bold">$450.000</p>
+                    <span class="badge bg-success">Alquilada</span>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title h5">Casa</h3>
+                    <p class="card-text mb-1">Belgrano 500, Yerba Buena</p>
+                    <p class="card-text mb-1">3 habitaciones · 2 baños · 120 m²</p>
+                    <p class="card-text fw-bold">$680.000</p>
+                    <span class="badge bg-warning text-dark">Disponible</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <section id="contratos" aria-labelledby="contratos-titulo">
-            <h2 id="contratos-titulo">Contratos</h2>
-            <table class="contratos-tabla">
-                <thead>
-                    <tr>
-                        <th scope="col">N° contrato</th>
-                        <th scope="col">Propiedad</th>
-                        <th scope="col">Inquilino</th>
-                        <th scope="col">Inicio</th>
-                        <th scope="col">Fin</th>
-                        <th scope="col">Alquiler</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>154</td>
-                        <td>Depto. San Martín 1234</td>
-                        <td>María Gómez</td>
-                        <td>01/08/2026</td>
-                        <td>31/07/2028</td>
-                        <td>$450.000</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+Y <section id="contratos"> por esto:
 
-        <section id="propietarios" aria-labelledby="propietarios-titulo">
-            <h2 id="propietarios-titulo">Propietarios e inquilinos</h2>
-            <ul class="personas-lista">
-                <li class="persona">
+
+<section id="contratos">
+    <h2>Contratos</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>N° Contrato</th>
+                    <th>Propiedad</th>
+                    <th>Inquilino</th>
+                    <th>Inicio</th>
+                    <th>Fin</th>
+                    <th>Alquiler</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>154</td>
+                    <td>Depto. San Martín 1234</td>
+                    <td>María Gómez</td>
+                    <td>01/08/2026</td>
+                    <td>31/07/2028</td>
+                    <td>$450.000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+        <section id="propietarios">
+            <h2>Propietarios e Inquilinos</h2>
+            <div class="personas-lista">
+                <article class="persona">
                     <h3>Juan Pérez</h3>
                     <p>Propietario</p>
                     <p>DNI: 30.123.456</p>
                     <p>Tel: 381-1234567</p>
-                </li>
-                <li class="persona">
+                </article>
+                <article class="persona">
                     <h3>María Gómez</h3>
                     <p>Inquilina</p>
                     <p>DNI: 35.987.654</p>
                     <p>Tel: 381-7654321</p>
-                </li>
-            </ul>
+                </article>
+            </div>
         </section>
 
-        <section id="pagos" aria-labelledby="pagos-titulo">
-            <h2 id="pagos-titulo">Pagos y vencimientos</h2>
+        <section id="pagos">
+            <h2>Pagos y Vencimientos</h2>
             <ul class="pagos-lista">
-                <li class="pago pago-pendiente">
+                <li class="pago-pendiente">
                     <span>Contrato #154 — Agosto</span>
                     <span>Vence: 10/08/2026</span>
                     <span class="estado">Pendiente</span>
                 </li>
-                <li class="pago pago-pagado">
+                <li class="pago-pagado">
                     <span>Contrato #145 — Julio</span>
                     <span>Pagado: 08/07/2026</span>
                     <span class="estado">Pagado</span>
                 </li>
             </ul>
         </section>
-                </section>
 
         <section id="sobre-nosotros">
             <h2>Sobre Nosotros</h2>
@@ -178,18 +183,18 @@
                 evolucionar hacia un producto utilizable en el mercado.
             </p>
 
-            <div class="equipo-grid">
-                <article class="persona-card">
+            <div class="personas-lista">
+                <article class="persona">
                     <h3>Esteban Nájera</h3>
-                    
+                    <p>[Tu texto de "sobre mí" acá]</p>
                 </article>
-                <article class="persona-card">
-                    <h3>Magali Guerreo</h3>
-                    
+                <article class="persona">
+                    <h3>Magui [Apellido]</h3>
+                    <p>[Su texto acá]</p>
                 </article>
-                <article class="persona-card">
-                    <h3>Claudia Lopez</h3>
-                   
+                <article class="persona">
+                    <h3>Claudia [Apellido]</h3>
+                    <p>[Su texto acá]</p>
                 </article>
             </div>
 
@@ -204,7 +209,6 @@
     <footer>
         <p>&copy; 2026 SIGA — Todos los derechos reservados</p>
     </footer>
-
 </body>
 
 </html>
