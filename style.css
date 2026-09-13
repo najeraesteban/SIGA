@@ -224,7 +224,7 @@ main section:first-child {
 
 /* ---------- Propietarios / Sobre Nosotros ---------- */
 
-.personas-lista {
+/*.personas-lista {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
     gap: 1.25rem;
@@ -238,7 +238,7 @@ main section:first-child {
     padding: 1.25rem;
 }
 
-/* ---------- Pagos ---------- */
+ ---------- Pagos ---------- 
 
 .pagos-lista li {
     display: flex;
@@ -266,14 +266,14 @@ main section:first-child {
     color: var(--verde-ok);
 }
 
-/* ---------- Footer ---------- */
+ ---------- Footer ---------- 
 
 footer {
     margin-left: var(--ancho-nav);
     padding: 1.5rem 3rem;
     font-size: 0.85rem;
     color: var(--pino-claro);
-}
+}*/
 
 /* ---------- Accesibilidad ---------- */
 
