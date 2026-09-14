@@ -22,6 +22,9 @@
     --radio-borde: 0.5rem;
     --espaciado-base: 1rem;
     --ancho-nav: 15rem;
+    --radio-borde: 8px;
+    --sombra-card: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
 
     --bs-primary: var(--pino);
     --bs-primary-rgb: 47, 74, 64;
@@ -34,82 +37,305 @@
 }
 
 body {
+    background: var(--piedra);
+    color: var(--tinta);
     font-family: var(--fuente-texto);
-    background-color: var(--piedra);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    font-family: var(--fuente-titulo);
+    font-weight: 600;
+    margin: 0 0 1rem;
     color: var(--tinta);
 }
 
-h1, h2, h3, .navbar-brand {
-    font-family: var(--fuente-titulo);
+h2 {
+    font-size: 1.5rem;
 }
 
-.hero-siga {
-    background-color: var(--pino);
-    color: #fff;
+h3 {
+    font-size: 1.1rem;
 }
 
-.card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+p {
+    margin: 0.2rem 0;
 }
 
-.card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15);
+a {
+    color: inherit;
 }
 
-.propiedad-card img {
-    border-top-left-radius: var(--radio-borde);
-    border-top-right-radius: var(--radio-borde);
-    object-fit: cover;
-    height: 200px;
+ul {
+    list-style: none;
 }
 
-.pago {
-    border-left: 5px solid var(--verde-ok);
-}
+/* ---------- Sidebar: marca + nav ---------- */
 
-.pago.pendiente {
-    border-left-color: var(--ocre);
-}
-
-footer {
-    background-color: var(--pino);
-    color: #fff;
-}
-
-.sidebar-siga {
-    background-color: var(--pino);
-    width: var(--ancho-nav);
+.marca {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
-    overflow-y: auto;
-    z-index: 1030;
+    width: var(--ancho-nav);
+    min-height: 12vh;
+    padding: 2rem 1.5rem 1rem;
+    background: var(--pino);
+    color: var(--piedra);
 }
 
-.sidebar-siga .nav-link {
-    color: rgba(255, 255, 255, 0.85);
+.marca-nombre {
+    font-family: var(--fuente-titulo);
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
 }
 
-.sidebar-siga .nav-link:hover,
-.sidebar-siga .nav-link.active {
-    color: #fff;
-    background-color: rgba(255, 255, 255, 0.12);
+.marca-slogan {
+    font-size: 0.85rem;
+    color: var(--pino-claro);
+    margin-top: 0.35rem;
 }
 
-.content-wrapper {
-    margin-left: 0;
+.nav-principal {
+    position: fixed;
+    top: 6.5rem;
+    left: 0;
+    width: var(--ancho-nav);
+    bottom: 0;
+    background: var(--pino);
+    padding: 1rem 0;
 }
 
-@media (min-width: 768px) {
-    .content-wrapper {
-        margin-left: var(--ancho-nav);
+.nav-principal a {
+    display: block;
+    padding: 0.65rem 1.5rem;
+    text-decoration: none;
+    color: var(--piedra);
+    border-left: 3px solid transparent;
+}
+
+.nav-principal a:hover,
+.nav-principal a:focus-visible {
+    background: rgba(255, 255, 255, 0.08);
+    border-left-color: var(--ocre);
+}
+
+/* ---------- Contenido principal ---------- */
+
+main {
+    margin-left: var(--ancho-nav);
+    padding: 2.5rem 3rem 4rem;
+    max-width: 90%;
+}
+
+main section {
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--borde);
+}
+
+main section:first-child {
+    padding-top: 0;
+    border-top: none;
+}
+
+/* ---------- Dashboard ---------- */
+
+.resumen {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    gap: 1px;
+    background: var(--borde);
+    border: 1px solid var(--borde);
+}
+
+.resumen li {
+    background: var(--superficie);
+    padding: 1.25rem 1rem;
+}
+
+.resumen-numero {
+    font-family: var(--fuente-titulo);
+    font-size: 2.1rem;
+    font-weight: 600;
+    color: var(--pino);
+}
+
+.resumen-etiqueta {
+    font-size: 0.85rem;
+    color: var(--pino-claro);
+}
+
+/* ---------- Propiedades ---------- */
+
+.propiedades-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 1.25rem;
+}
+
+.propiedad {
+    border: 1px solid var(--borde);
+    background: var(--superficie);
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-card);
+    padding: 1.25rem;
+}
+
+.precio {
+    font-family: var(--fuente-titulo);
+    font-size: 1.15rem;
+    color: var(--pino);
+    margin-top: 0.5rem;
+}
+
+.estado {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.15rem 0.6rem;
+    font-size: 0.8rem;
+    border-radius: var(--radio-borde);
+}
+
+.estado-alquilada {
+    background: var(--verde-ok-suave);
+    color: var(--verde-ok);
+}
+
+.estado-disponible {
+    background: var(--ocre-suave);
+    color: var(--ocre);
+}
+
+/* ---------- Contratos ---------- */
+
+.contratos-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--superficie);
+}
+
+.contratos-tabla th,
+.contratos-tabla td {
+    text-align: left;
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid var(--borde);
+}
+
+.contratos-tabla th {
+    font-weight: 600;
+    color: var(--pino-claro);
+    font-size: 0.85rem;
+    border-bottom: 2px solid var(--pino);
+}
+
+/* ---------- Propietarios / Sobre Nosotros ---------- */
+
+.personas-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+    gap: 1.25rem;
+}
+
+.persona {
+    border: 1px solid var(--borde);
+    background: var(--superficie);
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-card);
+    padding: 1.25rem;
+}
+
+/* ---------- Pagos ---------- */
+
+.pagos-lista li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1rem;
+    background: var(--superficie);
+    border: 1px solid var(--borde);
+    border-top: none;
+}
+
+.pagos-lista li:first-child {
+    border-top: 1px solid var(--borde);
+}
+
+.pago-pendiente .estado {
+    background: var(--ladrillo-suave);
+    color: var(--ladrillo);
+}
+
+.pago-pagado .estado {
+    background: var(--verde-ok-suave);
+    color: var(--verde-ok);
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+    margin-left: var(--ancho-nav);
+    padding: 1.5rem 3rem;
+    font-size: 0.85rem;
+    color: var(--pino-claro);
+}
+
+/* ---------- Accesibilidad ---------- */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--ocre);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 860px) {
+    :root {
+        --ancho-nav: 0px;
+    }
+
+    .marca,
+    .nav-principal {
+        position: static;
+        width: 100%;
+    }
+
+    .nav-principal {
+        overflow-x: auto;
+    }
+
+    .nav-principal ul {
+        display: flex;
+    }
+
+    main,
+    footer {
+        margin-left: 0;
+        padding: 2rem 1.25rem 3rem;
     }
 }
 
 @media (max-width: 480px) {
-    .propiedad-card img {
-        height: 160px;
+    .resumen {
+        grid-template-columns: 1fr;
+    }
+
+    .pagos-lista li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    h2 {
+        font-size: 1.25rem;
     }
 }
