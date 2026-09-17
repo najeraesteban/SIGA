@@ -29,20 +29,27 @@
         </div>
     </nav>
 
-    <div class="offcanvas offcanvas-start" style="background-color: var(--pino);" tabindex="-1"
-        id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+    <div class="offcanvas offcanvas-start" style="background-color: var(--pino);" tabindex="-1" id="sidebarOffcanvas"
+        aria-labelledby="sidebarOffcanvasLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title text-white" id="sidebarOffcanvasLabel">SIGA</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                aria-label="Cerrar"></button>
         </div>
         <div class="offcanvas-body">
             <ul class="nav nav-pills flex-column">
-                <li class="nav-item"><a href="#dashboard" class="nav-link text-white" data-bs-dismiss="offcanvas">Panel</a></li>
-                <li class="nav-item"><a href="#propiedades" class="nav-link text-white" data-bs-dismiss="offcanvas">Propiedades</a></li>
-                <li class="nav-item"><a href="#contratos" class="nav-link text-white" data-bs-dismiss="offcanvas">Contratos</a></li>
-                <li class="nav-item"><a href="#propietarios" class="nav-link text-white" data-bs-dismiss="offcanvas">Propietarios</a></li>
-                <li class="nav-item"><a href="#pagos" class="nav-link text-white" data-bs-dismiss="offcanvas">Pagos</a></li>
-                <li class="nav-item"><a href="#sobre-nosotros" class="nav-link text-white" data-bs-dismiss="offcanvas">Sobre Nosotros</a></li>
+                <li class="nav-item"><a href="#dashboard" class="nav-link text-white"
+                        data-bs-dismiss="offcanvas">Panel</a></li>
+                <li class="nav-item"><a href="#propiedades" class="nav-link text-white"
+                        data-bs-dismiss="offcanvas">Propiedades</a></li>
+                <li class="nav-item"><a href="#contratos" class="nav-link text-white"
+                        data-bs-dismiss="offcanvas">Contratos</a></li>
+                <li class="nav-item"><a href="#propietarios" class="nav-link text-white"
+                        data-bs-dismiss="offcanvas">Propietarios</a></li>
+                <li class="nav-item"><a href="#pagos" class="nav-link text-white" data-bs-dismiss="offcanvas">Pagos</a>
+                </li>
+                <li class="nav-item"><a href="#sobre-nosotros" class="nav-link text-white"
+                        data-bs-dismiss="offcanvas">Sobre Nosotros</a></li>
             </ul>
         </div>
     </div>
@@ -70,7 +77,11 @@
 
         <main>
             <section id="dashboard" class="container py-5">
-                <h2 class="mb-4">Panel General</h2>
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
+                    <h2 class="mb-0">Panel General</h2>
+                    <input type="text" id="buscador-panel" class="form-control w-auto"
+                        placeholder="Buscar en el panel..." style="min-width: 200px;">
+                </div>
                 <div class="row row-cols-2 row-cols-md-4 g-3">
                     <div class="col">
                         <div class="card text-center h-100 shadow-sm">
@@ -121,7 +132,8 @@
                     <div class="row row-cols-1 row-cols-md-2 g-4">
                         <div class="col">
                             <article class="card propiedad-card h-100 shadow-sm">
-                                <img src="img/dpto.jpg" class="card-img-top" alt="Departamento en San Martín 1234, San Miguel de Tucumán">
+                                <img src="img/dpto.jpg" class="card-img-top"
+                                    alt="Departamento en San Martín 1234, San Miguel de Tucumán">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between align-items-start">
                                         <h3 class="h5 card-title mb-1">Departamento</h3>
@@ -210,7 +222,8 @@
             <section id="pagos" class="container py-5">
                 <h2 class="mb-4">Pagos y Vencimientos</h2>
                 <ul class="list-group">
-                    <li class="list-group-item pago pendiente d-flex flex-wrap justify-content-between align-items-center gap-2">
+                    <li
+                        class="list-group-item pago pendiente d-flex flex-wrap justify-content-between align-items-center gap-2">
                         <span>Contrato #154 — Agosto</span>
                         <span>Vence: 10/08/2026</span>
                         <span class="badge text-bg-warning">Pendiente</span>
@@ -296,6 +309,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
