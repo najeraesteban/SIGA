@@ -220,20 +220,23 @@
             </section>
 
             <section id="pagos" class="container py-5">
-                <h2 class="mb-4">Pagos y Vencimientos</h2>
-                <ul class="list-group">
-                    <li
-                        class="list-group-item pago pendiente d-flex flex-wrap justify-content-between align-items-center gap-2">
-                        <span>Contrato #154 — Agosto</span>
-                        <span>Vence: 10/08/2026</span>
-                        <span class="badge text-bg-warning">Pendiente</span>
-                    </li>
-                    <li class="list-group-item pago d-flex flex-wrap justify-content-between align-items-center gap-2">
-                        <span>Contrato #145 — Julio</span>
-                        <span>Pagado: 08/07/2026</span>
-                        <span class="badge text-bg-success">Pagado</span>
-                    </li>
-                </ul>
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
+    <h2 class="mb-0">Pagos y Vencimientos</h2>
+    <span id="contador-pendientes" class="badge bg-danger">1 pendiente</span>
+</div>
+<ul class="list-group">
+    <li class="list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <span>Contrato #154 — Agosto</span>
+        <span class="fecha-pago">Vence: 10/08/2026</span>
+        <span class="badge bg-danger">Pendiente</span>
+        <button type="button" class="btn btn-sm btn-outline-success btn-pagar">Marcar como pagado</button>
+    </li>
+    <li class="list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <span>Contrato #145 — Julio</span>
+        <span class="fecha-pago">Pagado: 08/07/2026</span>
+        <span class="badge bg-success">Pagado</span>
+    </li>
+</ul>
             </section>
 
             <section id="sobre-nosotros" class="py-5" style="background-color: var(--superficie);">
