@@ -129,9 +129,16 @@
             <section id="propiedades" class="py-5" style="background-color: var(--superficie);">
                 <div class="container">
                     <h2 class="mb-4">Propiedades</h2>
+                    <div class="d-flex gap-2 flex-wrap mb-3">
+                        <button class="btn btn-sm btn-primary filtro-btn" data-filtro="todas">Todas</button>
+                        <button class="btn btn-sm btn-outline-secondary filtro-btn"
+                            data-filtro="alquilada">Alquiladas</button>
+                        <button class="btn btn-sm btn-outline-secondary filtro-btn"
+                            data-filtro="disponible">Disponibles</button>
+                    </div>
                     <div class="row row-cols-1 row-cols-md-2 g-4">
                         <div class="col">
-                            <article class="card propiedad-card h-100 shadow-sm">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="alquilada">
                                 <img src="img/dpto.jpg" class="card-img-top"
                                     alt="Departamento en San Martín 1234, San Miguel de Tucumán">
                                 <div class="card-body">
@@ -146,7 +153,7 @@
                             </article>
                         </div>
                         <div class="col">
-                            <article class="card propiedad-card h-100 shadow-sm">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="disponible">
                                 <img src="img/casa.jpg" class="card-img-top" alt="Casa en Belgrano 500, Yerba Buena">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between align-items-start">
@@ -221,22 +228,23 @@
 
             <section id="pagos" class="container py-5">
                 <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
-    <h2 class="mb-0">Pagos y Vencimientos</h2>
-    <span id="contador-pendientes" class="badge bg-danger">1 pendiente</span>
-</div>
-<ul class="list-group">
-    <li class="list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <span>Contrato #154 — Agosto</span>
-        <span class="fecha-pago">Vence: 10/08/2026</span>
-        <span class="badge bg-danger">Pendiente</span>
-        <button type="button" class="btn btn-sm btn-outline-success btn-pagar">Marcar como pagado</button>
-    </li>
-    <li class="list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <span>Contrato #145 — Julio</span>
-        <span class="fecha-pago">Pagado: 08/07/2026</span>
-        <span class="badge bg-success">Pagado</span>
-    </li>
-</ul>
+                    <h2 class="mb-0">Pagos y Vencimientos</h2>
+                    <span id="contador-pendientes" class="badge bg-danger">1 pendiente</span>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+                        <span>Contrato #154 — Agosto</span>
+                        <span class="fecha-pago">Vence: 10/08/2026</span>
+                        <span class="badge bg-danger">Pendiente</span>
+                        <button type="button" class="btn btn-sm btn-outline-success btn-pagar">Marcar como
+                            pagado</button>
+                    </li>
+                    <li class="list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+                        <span>Contrato #145 — Julio</span>
+                        <span class="fecha-pago">Pagado: 08/07/2026</span>
+                        <span class="badge bg-success">Pagado</span>
+                    </li>
+                </ul>
             </section>
 
             <section id="sobre-nosotros" class="py-5" style="background-color: var(--superficie);">
