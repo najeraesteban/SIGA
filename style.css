@@ -112,3 +112,9 @@ footer {
     }
 }
 
+@media (max-width: 576px) {
+    #sobre-nosotros {
+        padding-bottom: 4rem;
+    }
+}
+
