@@ -74,3 +74,28 @@ botonesPagar.forEach(function (boton) {
 actualizarContadorPagos();
 
 
+// ---------- 3. Filtro de propiedades por estado ----------
+const botonesEstado = document.querySelectorAll(".filtro-btn");
+const tarjetasPropiedades = document.querySelectorAll(".card[data-estado]");
+
+botonesEstado.forEach(function (boton) {
+    boton.addEventListener("click", function () {
+        botonesEstado.forEach(function (b) {
+            b.classList.remove("btn-primary");
+            b.classList.add("btn-outline-secondary");
+        });
+        boton.classList.remove("btn-outline-secondary");
+        boton.classList.add("btn-primary");
+
+        const filtro = boton.getAttribute("data-filtro");
+
+        tarjetasPropiedades.forEach(function (card) {
+            const estadoCard = card.getAttribute("data-estado");
+            if (filtro === "todas" || estadoCard === filtro) {
+                card.closest(".col").style.display = "";
+            } else {
+                card.closest(".col").style.display = "none";
+            }
+        });
+    });
+});
