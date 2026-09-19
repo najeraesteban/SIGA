@@ -56,6 +56,17 @@ Mediante Media Queries en los breakpoints de 860px (donde la barra lateral
 fija pasa a ser una barra horizontal) y 480px (ajustes de tipografía y
 disposición para celulares).
 
+## Estrategias SEO implementadas
+
+1. **Palabras clave descriptivas en encabezados**: los `<h1>`/`<h2>` usan
+   términos que describen la función real de cada sección.
+2. **Título y meta description optimizados**, orientados a qué resuelve
+   el sistema para una inmobiliaria.
+3. **HTML semántico** (`header`, `nav`, `main`, `section`, `footer`) para
+   facilitar la indexación por buscadores.
+4. **Enlaces internos** mediante anclas del menú de navegación.
+5. **Diseño responsive**, ya que Google prioriza la experiencia mobile.
+
 ## Estructura del proyecto
 
 ```

@@ -28,7 +28,7 @@ const campoBusqueda = document.getElementById("buscador-panel");
 if (campoBusqueda) {
     campoBusqueda.addEventListener("input", function () {
         const textoBuscado = campoBusqueda.value.toLowerCase();
-        const cards = document.querySelectorAll("#dashboard .card");
+        const cards = document.querySelectorAll("#dashboard .siga-ledger-item");
 
         cards.forEach(function (card) {
             const textoCard = card.textContent.toLowerCase();
