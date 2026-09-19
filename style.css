@@ -112,8 +112,3 @@ footer {
     }
 }
 
-@media (max-width: 480px) {
-    .propiedad-card img {
-        height: 160px;
-    }
-}
