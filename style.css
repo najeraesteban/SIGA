@@ -1,32 +1,32 @@
 :root {
-    --tinta: #1B2420;
-    --piedra: #EDEFEA;
-    --superficie: #FFFFFF;
-    --borde: #D6D9D2;
+    --tinta: #23241F;
+    --piedra: #F4EEE1;
+    --superficie: #FBF8F2;
+    --borde: #D8CBAF;
 
-    --pino: #2F4A40;
-    --pino-claro: #4E6E61;
+    --pino: #1F3B2E;
+    --pino-claro: #3B5A48;
 
-    --ocre: #B9822E;
-    --ocre-suave: #F2E4C8;
+    --ocre: #9C7A32;
+    --ocre-suave: #EFE3C4;
 
-    --ladrillo: #A8493F;
-    --ladrillo-suave: #F1DCD8;
+    --ladrillo: #A63D2F;
+    --ladrillo-suave: #F1DAD3;
 
-    --verde-ok: #3E6B4F;
+    --verde-ok: #3D6B4A;
     --verde-ok-suave: #DCE8DD;
 
-    --fuente-titulo: "Source Serif 4", Georgia, serif;
+    --fuente-titulo: "Zilla Slab", Georgia, serif;
     --fuente-texto: "IBM Plex Sans", Arial, sans-serif;
+    --fuente-datos: "IBM Plex Mono", monospace;
 
-    --radio-borde: 0.5rem;
+    --radio-borde: 2px;
     --espaciado-base: 1rem;
-    --ancho-nav: 15rem;
 
     --bs-primary: var(--pino);
-    --bs-primary-rgb: 47, 74, 64;
+    --bs-primary-rgb: 31, 59, 46;
     --bs-secondary: var(--ocre);
-    --bs-secondary-rgb: 185, 130, 46;
+    --bs-secondary-rgb: 156, 122, 50;
     --bs-body-bg: var(--piedra);
     --bs-body-color: var(--tinta);
     --bs-body-font-family: var(--fuente-texto);
@@ -113,3 +113,24 @@ footer {
         height: 160px;
     }
 }
+
+.siga-topbar { background: var(--pino); border-bottom: 3px solid var(--ocre); }
+.siga-marca { display: flex; align-items: center; gap: 0.6rem; color: var(--piedra); text-decoration: none; font-family: var(--fuente-titulo); font-size: 1.3rem; font-weight: 600; }
+.siga-sello { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--ocre); color: var(--pino); font-family: var(--fuente-titulo); font-weight: 700; }
+.siga-toggle { background: none; border: none; padding: 0.4rem; display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
+.siga-toggle span { width: 24px; height: 2px; background: var(--piedra); display: block; }
+.siga-offcanvas { background: var(--pino); color: var(--piedra); width: 16rem; }
+.siga-offcanvas .nav-link { color: rgba(255, 255, 255, 0.85); padding: 0.75rem 1.5rem; border-left: 3px solid transparent; }
+.siga-offcanvas .nav-link:hover, .siga-offcanvas .nav-link.active { color: #fff; border-left-color: var(--ocre); background: rgba(255, 255, 255, 0.06); }
+.siga-input { border: none; border-bottom: 2px solid var(--borde); background: transparent; border-radius: 0; padding: 0.4rem 0.2rem; min-width: 220px; font-family: var(--fuente-texto); }
+.siga-input:focus { outline: none; border-bottom-color: var(--pino); }
+.siga-ledger { display: flex; flex-wrap: wrap; border-top: 1px solid var(--borde); border-left: 1px solid var(--borde); }
+.siga-ledger-item { flex: 1 1 9rem; padding: 1.5rem 1rem; border-right: 1px solid var(--borde); border-bottom: 1px solid var(--borde); text-align: center; }
+.siga-ledger-numero { font-family: var(--fuente-datos); font-size: 2.2rem; font-weight: 600; color: var(--pino); margin-bottom: 0.25rem; }
+.siga-ledger-label { font-size: 0.85rem; color: var(--pino-claro); margin: 0; }
+
+.card { border: 1px solid var(--borde); border-left: 4px solid var(--ocre); box-shadow: none !important; background: var(--superficie); }
+.card:hover { border-left-color: var(--pino); }
+.list-group-item { background: var(--superficie); border-color: var(--borde); }
+.siga-footer { background: var(--pino); color: var(--piedra); }
+.siga-tabla-header { background: var(--pino); color: var(--piedra); }
