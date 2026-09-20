@@ -129,3 +129,38 @@ function evaluarVencimientoContratos() {
 }
 
 evaluarVencimientoContratos();
+
+const campoBusquedaPersonas = document.getElementById("buscador-personas");
+const botonesFiltroPersona = document.querySelectorAll(".filtro-persona-btn");
+const tarjetasPersonas = document.querySelectorAll(".persona-card[data-tipo]");
+
+function filtrarPersonas() {
+    const texto = campoBusquedaPersonas ? campoBusquedaPersonas.value.toLowerCase() : "";
+    const filtroActivo = document.querySelector(".filtro-persona-btn.btn-primary");
+    const tipo = filtroActivo ? filtroActivo.getAttribute("data-filtro-persona") : "todos";
+
+    tarjetasPersonas.forEach(function (card) {
+        const textoCard = card.textContent.toLowerCase();
+        const tipoCard = card.getAttribute("data-tipo");
+        const coincideTexto = textoCard.includes(texto);
+        const coincideTipo = tipo === "todos" || tipoCard === tipo;
+
+        card.closest(".col").style.display = (coincideTexto && coincideTipo) ? "" : "none";
+    });
+}
+
+if (campoBusquedaPersonas) {
+    campoBusquedaPersonas.addEventListener("input", filtrarPersonas);
+}
+
+botonesFiltroPersona.forEach(function (boton) {
+    boton.addEventListener("click", function () {
+        botonesFiltroPersona.forEach(function (b) {
+            b.classList.remove("btn-primary");
+            b.classList.add("btn-outline-secondary");
+        });
+        boton.classList.remove("btn-outline-secondary");
+        boton.classList.add("btn-primary");
+        filtrarPersonas();
+    });
+});

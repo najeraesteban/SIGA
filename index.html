@@ -200,33 +200,45 @@
     </div>
 </section>
 
-            <section id="propietarios" class="py-5" style="background-color: var(--superficie);">
-                <div class="container">
-                    <h2 class="mb-4">Propietarios e Inquilinos</h2>
-                    <div class="row row-cols-1 row-cols-md-2 g-4">
-                        <div class="col">
-                            <article class="card persona-card h-100 shadow-sm">
-                                <div class="card-body">
-                                    <h3 class="h5 card-title">Juan Pérez</h3>
-                                    <p class="card-text mb-1 text-muted">Propietario</p>
-                                    <p class="card-text mb-1">DNI: 30.123.456</p>
-                                    <p class="card-text mb-0">Tel: 381-1234567</p>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col">
-                            <article class="card persona-card h-100 shadow-sm">
-                                <div class="card-body">
-                                    <h3 class="h5 card-title">María Gómez</h3>
-                                    <p class="card-text mb-1 text-muted">Inquilina</p>
-                                    <p class="card-text mb-1">DNI: 35.987.654</p>
-                                    <p class="card-text mb-0">Tel: 381-7654321</p>
-                                </div>
-                            </article>
-                        </div>
+           <section id="propietarios" class="py-5" style="background-color: var(--superficie);">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+            <h2 class="mb-0">Propietarios e Inquilinos</h2>
+            <div class="input-group" style="max-width: 300px;">
+                <span class="input-group-text bg-white">🔍</span>
+                <input type="text" id="buscador-personas" class="form-control"
+                    placeholder="Buscar por nombre o DNI...">
+            </div>
+        </div>
+        <div class="d-flex gap-2 flex-wrap mb-3">
+            <button class="btn btn-sm btn-primary filtro-persona-btn" data-filtro-persona="todos">Todos</button>
+            <button class="btn btn-sm btn-outline-secondary filtro-persona-btn" data-filtro-persona="propietario">Propietarios</button>
+            <button class="btn btn-sm btn-outline-secondary filtro-persona-btn" data-filtro-persona="inquilino">Inquilinos</button>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="propietario">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Juan Pérez</h3>
+                        <p class="card-text mb-1 text-muted">Propietario</p>
+                        <p class="card-text mb-1">DNI: 30.123.456</p>
+                        <p class="card-text mb-0">Tel: 381-1234567</p>
                     </div>
-                </div>
-            </section>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="inquilino">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">María Gómez</h3>
+                        <p class="card-text mb-1 text-muted">Inquilina</p>
+                        <p class="card-text mb-1">DNI: 35.987.654</p>
+                        <p class="card-text mb-0">Tel: 381-7654321</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
 
             <section id="pagos" class="container py-5">
                 <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
