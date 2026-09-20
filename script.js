@@ -99,3 +99,33 @@ botonesEstado.forEach(function (boton) {
         });
     });
 });
+
+
+function parsearFecha(fechaTexto) {
+    const [dia, mes, anio] = fechaTexto.split("/");
+    return new Date(anio, mes - 1, dia);
+}
+
+function evaluarVencimientoContratos() {
+    const filas = document.querySelectorAll("#contratos tbody tr");
+    const hoy = new Date();
+
+    filas.forEach(function (fila) {
+        const celdaFin = fila.querySelector(".fecha-fin");
+        const celdaEstado = fila.querySelector(".estado-contrato");
+        if (!celdaFin || !celdaEstado) return;
+
+        const fechaFin = parsearFecha(celdaFin.textContent.trim());
+        const diasRestantes = Math.ceil((fechaFin - hoy) / (1000 * 60 * 60 * 24));
+
+        if (diasRestantes < 0) {
+            celdaEstado.innerHTML = '<span class="badge bg-secondary">Vencido</span>';
+        } else if (diasRestantes <= 30) {
+            celdaEstado.innerHTML = '<span class="badge bg-danger">Vence pronto</span>';
+        } else {
+            celdaEstado.innerHTML = '<span class="badge bg-success">Vigente</span>';
+        }
+    });
+}
+
+evaluarVencimientoContratos();
