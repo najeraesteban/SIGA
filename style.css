@@ -112,6 +112,12 @@ footer {
     }
 }
 
+@media (max-width: 480px) {
+    .propiedad-card img {
+        height: 160px;
+    }
+}
+
 @media (max-width: 576px) {
     #sobre-nosotros {
         padding-bottom: 4rem;
