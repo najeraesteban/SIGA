@@ -99,3 +99,91 @@ botonesEstado.forEach(function (boton) {
         });
     });
 });
+
+
+function parsearFecha(fechaTexto) {
+    const [dia, mes, anio] = fechaTexto.split("/");
+    return new Date(anio, mes - 1, dia);
+}
+
+function evaluarVencimientoContratos() {
+    const filas = document.querySelectorAll("#contratos tbody tr");
+    const hoy = new Date();
+
+    filas.forEach(function (fila) {
+        const celdaFin = fila.querySelector(".fecha-fin");
+        const celdaEstado = fila.querySelector(".estado-contrato");
+        if (!celdaFin || !celdaEstado) return;
+
+        const fechaFin = parsearFecha(celdaFin.textContent.trim());
+        const diasRestantes = Math.ceil((fechaFin - hoy) / (1000 * 60 * 60 * 24));
+
+        if (diasRestantes < 0) {
+            celdaEstado.innerHTML = '<span class="badge bg-secondary">Vencido</span>';
+        } else if (diasRestantes <= 30) {
+            celdaEstado.innerHTML = '<span class="badge bg-danger">Vence pronto</span>';
+        } else {
+            celdaEstado.innerHTML = '<span class="badge bg-success">Vigente</span>';
+        }
+    });
+}
+
+evaluarVencimientoContratos();
+
+const campoBusquedaPersonas = document.getElementById("buscador-personas");
+const botonesFiltroPersona = document.querySelectorAll(".filtro-persona-btn");
+const tarjetasPersonas = document.querySelectorAll(".persona-card[data-tipo]");
+
+function filtrarPersonas() {
+    const texto = campoBusquedaPersonas ? campoBusquedaPersonas.value.toLowerCase() : "";
+    const filtroActivo = document.querySelector(".filtro-persona-btn.btn-primary");
+    const tipo = filtroActivo ? filtroActivo.getAttribute("data-filtro-persona") : "todos";
+
+    tarjetasPersonas.forEach(function (card) {
+        const textoCard = card.textContent.toLowerCase();
+        const tipoCard = card.getAttribute("data-tipo");
+        const coincideTexto = textoCard.includes(texto);
+        const coincideTipo = tipo === "todos" || tipoCard === tipo;
+
+        card.closest(".col").style.display = (coincideTexto && coincideTipo) ? "" : "none";
+    });
+}
+
+if (campoBusquedaPersonas) {
+    campoBusquedaPersonas.addEventListener("input", filtrarPersonas);
+}
+
+botonesFiltroPersona.forEach(function (boton) {
+    boton.addEventListener("click", function () {
+        botonesFiltroPersona.forEach(function (b) {
+            b.classList.remove("btn-primary");
+            b.classList.add("btn-outline-secondary");
+        });
+        boton.classList.remove("btn-outline-secondary");
+        boton.classList.add("btn-primary");
+        filtrarPersonas();
+    });
+});
+
+
+const anioActual = document.getElementById("anio-actual");
+if (anioActual) {
+    anioActual.textContent = new Date().getFullYear();
+}
+
+
+const botonScrollTop = document.getElementById("btn-scroll-top");
+
+if (botonScrollTop) {
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 400) {
+            botonScrollTop.classList.add("visible");
+        } else {
+            botonScrollTop.classList.remove("visible");
+        }
+    });
+
+    botonScrollTop.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+}
