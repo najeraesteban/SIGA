@@ -164,3 +164,26 @@ botonesFiltroPersona.forEach(function (boton) {
         filtrarPersonas();
     });
 });
+
+
+const anioActual = document.getElementById("anio-actual");
+if (anioActual) {
+    anioActual.textContent = new Date().getFullYear();
+}
+
+
+const botonScrollTop = document.getElementById("btn-scroll-top");
+
+if (botonScrollTop) {
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 400) {
+            botonScrollTop.classList.add("visible");
+        } else {
+            botonScrollTop.classList.remove("visible");
+        }
+    });
+
+    botonScrollTop.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+}
