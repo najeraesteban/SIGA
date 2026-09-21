@@ -285,3 +285,20 @@ html {
     --bs-btn-active-border-color: var(--ocre-suave);
     --bs-btn-focus-shadow-rgb: 185, 130, 46;
 }
+
+/* ---------- Panel general ---------- */
+.panel-neutro { border-left: 4px solid var(--pino); }
+.panel-verde { border-left: 4px solid var(--verde-ok); }
+.panel-ocre { border-left: 4px solid var(--ocre); }
+.panel-ladrillo { border-left: 4px solid var(--ladrillo); }
+
+.color-alquiladas { background-color: var(--verde-ok); }
+.color-disponibles { background-color: var(--ocre); }
+.color-mantenimiento { background-color: var(--ladrillo); }
+
+.leyenda-punto {
+    display: inline-block;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    margin-right: 0.4rem;
