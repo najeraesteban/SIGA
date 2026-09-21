@@ -94,8 +94,11 @@ siguiendo la convención `<token>/<nombre-corto>` (por ejemplo,
 `feature/dashboard-nav`), integrando el trabajo a `dev` mediante Pull
 Requests revisados por el resto del equipo.
 
----
+## Créditos de imágenes
 
+Las fotos de propiedades y del encabezado provienen de bancos de imágenes gratuitos Unsplash, con licencias que permiten su uso sin atribución obligatoria.
+
+---
 *Se utilizaron herramientas de IA como apoyo para organizar el flujo de
 trabajo en Git y para la generación de código de referencia, comprendido y
 adaptado por el equipo.*
