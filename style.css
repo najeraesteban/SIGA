@@ -146,3 +146,23 @@ footer {
 .btn-scroll-top:hover {
     background-color: #a3721f;
 }
+
+.btn-whatsapp-custom {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #25D366;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-whatsapp-custom:hover {
+    background-color: #1ebe5a;
+    color: #fff;
+    transform: translateY(-1px);
+}
