@@ -43,7 +43,7 @@ if (campoBusqueda) {
 
 
 function actualizarContadorPagos() {
-    const pendientes = document.querySelectorAll("#pagos .badge.bg-danger").length;
+    const pendientes = document.querySelectorAll("#pagos .list-group-item .badge.bg-danger").length;
     const contador = document.getElementById("contador-pendientes");
     if (contador) {
         contador.textContent = pendientes + (pendientes === 1 ? " pendiente" : " pendientes");
@@ -59,6 +59,7 @@ botonesPagar.forEach(function (boton) {
         const badge = item.querySelector(".badge");
         badge.textContent = "Pagado";
         badge.className = "badge bg-success";
+        item.classList.remove("pendiente");
 
         const spanFecha = item.querySelector(".fecha-pago");
         if (spanFecha) {
@@ -138,11 +139,14 @@ function filtrarPersonas() {
     const texto = campoBusquedaPersonas ? campoBusquedaPersonas.value.toLowerCase() : "";
     const filtroActivo = document.querySelector(".filtro-persona-btn.btn-primary");
     const tipo = filtroActivo ? filtroActivo.getAttribute("data-filtro-persona") : "todos";
+    // Permite buscar el DNI con o sin puntos (30123456 o 30.123.456)
+    const textoSinPuntos = texto.replace(/\./g, "");
 
     tarjetasPersonas.forEach(function (card) {
         const textoCard = card.textContent.toLowerCase();
         const tipoCard = card.getAttribute("data-tipo");
-        const coincideTexto = textoCard.includes(texto);
+        const coincideTexto = textoCard.includes(texto) ||
+            (textoSinPuntos !== "" && textoCard.replace(/\./g, "").includes(textoSinPuntos));
         const coincideTipo = tipo === "todos" || tipoCard === tipo;
 
         card.closest(".col").style.display = (coincideTexto && coincideTipo) ? "" : "none";
@@ -190,9 +194,9 @@ if (botonScrollTop) {
 
 
 function agregarBotonesWhatsapp() {
-    const tarjetasPersonas = document.querySelectorAll(".persona-card");
+    const tarjetas = document.querySelectorAll(".persona-card");
 
-    tarjetasPersonas.forEach(function (card) {
+    tarjetas.forEach(function (card) {
         const parrafos = card.querySelectorAll(".card-body p");
         let parrafoTelefono = null;
 

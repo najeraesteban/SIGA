@@ -9,6 +9,7 @@
         content="Administrá propiedades, contratos, pagos y vencimientos de tu inmobiliaria desde un solo panel.">
     <meta name="author" content="SIGA">
     <meta name="robots" content="index, follow">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏠%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -19,7 +20,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-dark d-md-none" style="background-color: var(--pino);">
+    <nav class="navbar navbar-dark d-md-none" style="background-color: var(--pino);" aria-label="Navegación móvil">
         <div class="container-fluid">
             <a class="navbar-brand fw-semibold" href="#dashboard">SIGA</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas"
@@ -36,7 +37,7 @@
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                 aria-label="Cerrar"></button>
         </div>
-        <div class="offcanvas-body" style="background-color: var(--superficie);">
+        <div class="offcanvas-body">
             <ul class="nav nav-pills flex-column">
                 <li class="nav-item"><a href="#dashboard" class="nav-link text-white"
                         data-bs-dismiss="offcanvas">Panel</a></li>
@@ -54,7 +55,7 @@
         </div>
     </div>
 
-    <nav class="sidebar-siga d-none d-md-flex flex-column p-3">
+    <nav class="sidebar-siga d-none d-md-flex flex-column p-3" aria-label="Navegación principal">
         <a class="navbar-brand fw-semibold mb-4 text-white" href="#dashboard">SIGA</a>
         <ul class="nav nav-pills flex-column">
             <li class="nav-item"><a href="#dashboard" class="nav-link">Panel</a></li>
@@ -79,7 +80,7 @@
             <section id="dashboard" class="container py-5">
                 <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
                     <h2 class="mb-0">Panel General</h2>
-                    <input type="text" id="buscador-panel" class="form-control w-auto"
+                    <input type="text" id="buscador-panel" class="form-control w-auto" aria-label="Buscar en el panel"
                         placeholder="Buscar en el panel..." style="min-width: 200px;">
                 </div>
                 <div class="row row-cols-2 row-cols-md-4 g-3">
@@ -139,7 +140,7 @@
                     <div class="row row-cols-1 row-cols-md-2 g-4">
                         <div class="col">
                             <article class="card propiedad-card h-100 shadow-sm" data-estado="alquilada">
-                                <img src="img/dpto.jpg" class="card-img-top"
+                                <img src="img/dpto.jpg" loading="lazy" class="card-img-top"
                                     alt="Departamento en San Martín 1234, San Miguel de Tucumán">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between align-items-start">
@@ -154,7 +155,7 @@
                         </div>
                         <div class="col">
                             <article class="card propiedad-card h-100 shadow-sm" data-estado="disponible">
-                                <img src="img/casa.jpg" class="card-img-top" alt="Casa en Belgrano 500, Yerba Buena">
+                                <img src="img/casa.jpg" loading="lazy" class="card-img-top" alt="Casa en Belgrano 500, Yerba Buena">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between align-items-start">
                                         <h3 class="h5 card-title mb-1">Casa</h3>
@@ -205,8 +206,8 @@
         <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
             <h2 class="mb-0">Propietarios e Inquilinos</h2>
             <div class="input-group" style="max-width: 300px;">
-                <span class="input-group-text bg-white">🔍</span>
-                <input type="text" id="buscador-personas" class="form-control"
+                <span class="input-group-text bg-white" aria-hidden="true">🔍</span>
+                <input type="text" id="buscador-personas" class="form-control" aria-label="Buscar por nombre o DNI"
                     placeholder="Buscar por nombre o DNI...">
             </div>
         </div>
@@ -246,14 +247,14 @@
                     <span id="contador-pendientes" class="badge bg-danger">1 pendiente</span>
                 </div>
                 <ul class="list-group">
-                    <li class="list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+                    <li class="pago pendiente list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
                         <span>Contrato #154 — Agosto</span>
                         <span class="fecha-pago">Vence: 10/08/2026</span>
                         <span class="badge bg-danger">Pendiente</span>
                         <button type="button" class="btn btn-sm btn-outline-success btn-pagar">Marcar como
                             pagado</button>
                     </li>
-                    <li class="list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+                    <li class="pago list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
                         <span>Contrato #145 — Julio</span>
                         <span class="fecha-pago">Pagado: 08/07/2026</span>
                         <span class="badge bg-success">Pagado</span>
@@ -298,7 +299,7 @@
     <div class="col">
         <article class="card persona-card h-100 shadow-sm text-center">
             <div class="card-body">
-                <img src="img/esteban.jpeg" alt="Esteban Nájera"
+                <img src="img/esteban.jpeg" loading="lazy" alt="Esteban Nájera"
                     class="rounded-circle mb-2" width="150" height="150" style="object-fit: cover;">
                 <h3 class="h6 card-title mb-0">Esteban Nájera</h3>
             </div>
@@ -307,7 +308,7 @@
     <div class="col">
         <article class="card persona-card h-100 shadow-sm text-center">
             <div class="card-body">
-                <img src="img/maga.jpeg" alt="Magali Guerrero"
+                <img src="img/maga.jpeg" loading="lazy" alt="Magali Guerrero"
                     class="rounded-circle mb-2" width="150" height="150" style="object-fit: cover;">
                 <h3 class="h6 card-title mb-0">Magali Guerrero</h3>
             </div>
@@ -316,7 +317,7 @@
     <div class="col">
         <article class="card persona-card h-100 shadow-sm text-center">
             <div class="card-body">
-                <img src="img/clau.jpeg" alt="Claudia Lopez"
+                <img src="img/clau.jpeg" loading="lazy" alt="Claudia Lopez"
                     class="rounded-circle mb-2" width="150" height="150" style="object-fit: cover;">
                 <h3 class="h6 card-title mb-0">Claudia Lopez</h3>
             </div>

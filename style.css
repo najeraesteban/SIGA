@@ -19,7 +19,6 @@
     --fuente-titulo: "Source Serif 4", Georgia, serif;
     --fuente-texto: "IBM Plex Sans", Arial, sans-serif;
 
-    --radio-borde: 0.5rem;
     --espaciado-base: 1rem;
     --ancho-nav: 15rem;
 
@@ -97,7 +96,9 @@ footer {
 }
 
 .sidebar-siga .nav-link:hover,
-.sidebar-siga .nav-link.active {
+.sidebar-siga .nav-link.active,
+.offcanvas .nav-link:hover,
+.offcanvas .nav-link.active {
     color: #fff;
     background-color: rgba(255, 255, 255, 0.12);
 }
@@ -165,4 +166,23 @@ footer {
     background-color: #1ebe5a;
     color: #fff;
     transform: translateY(-1px);
+}
+
+/* Bootstrap 5.3 trae fijos el azul de .btn-primary y el foco de los inputs:
+   se redefinen acá para que sigan la paleta del proyecto */
+.btn-primary {
+    --bs-btn-bg: var(--pino);
+    --bs-btn-border-color: var(--pino);
+    --bs-btn-hover-bg: var(--pino-claro);
+    --bs-btn-hover-border-color: var(--pino-claro);
+    --bs-btn-active-bg: var(--pino-claro);
+    --bs-btn-active-border-color: var(--pino-claro);
+    --bs-btn-disabled-bg: var(--pino);
+    --bs-btn-disabled-border-color: var(--pino);
+    --bs-btn-focus-shadow-rgb: 47, 74, 64;
+}
+
+.form-control:focus {
+    border-color: var(--pino-claro);
+    box-shadow: 0 0 0 0.25rem rgba(47, 74, 64, 0.25);
 }
