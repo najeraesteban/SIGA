@@ -56,11 +56,11 @@ layout (`--ancho-nav`, `--radio-borde`, `--sombra-card`), definidas en
 
 ## ¿Cómo implementaron el Responsive Design?
 
-Combinando las clases responsive de Bootstrap (`row-cols-*`, `d-md-*`) con
-Media Queries propias en los breakpoints de 768px (a partir de ahí se muestra
-la barra lateral fija y el contenido se desplaza a la derecha; por debajo se
-usa una barra superior con menú desplegable) y 576px (ajuste de espaciado en la
-sección Sobre Nosotros para celulares).
+Combinando las clases responsive de Bootstrap (`row-cols-*`,
+`navbar-expand-lg`) con una Media Query propia en 576px (ajuste de espaciado en
+la sección Sobre Nosotros para celulares). La barra de navegación superior es
+fija (`sticky-top`) y, por debajo de 992px (breakpoint `lg` de Bootstrap), se
+convierte en un menú desplegable lateral.
 
 ## SEO
 
