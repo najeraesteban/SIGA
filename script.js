@@ -187,3 +187,35 @@ if (botonScrollTop) {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 }
+
+
+function agregarBotonesWhatsapp() {
+    const tarjetasPersonas = document.querySelectorAll(".persona-card");
+
+    tarjetasPersonas.forEach(function (card) {
+        const parrafos = card.querySelectorAll(".card-body p");
+        let parrafoTelefono = null;
+
+        parrafos.forEach(function (p) {
+            if (p.textContent.trim().startsWith("Tel:")) {
+                parrafoTelefono = p;
+            }
+        });
+
+        if (!parrafoTelefono || card.querySelector(".btn-whatsapp")) return;
+
+        const soloNumeros = parrafoTelefono.textContent.replace(/\D/g, "");
+        const numeroWhatsapp = "549" + soloNumeros;
+
+        const boton = document.createElement("a");
+        boton.href = `https://wa.me/${numeroWhatsapp}`;
+        boton.target = "_blank";
+        boton.rel = "noopener noreferrer";
+        boton.className = "btn btn-sm btn-whatsapp-custom mt-2 btn-whatsapp";
+        boton.textContent = "📱 WhatsApp";
+
+        card.querySelector(".card-body").appendChild(boton);
+    });
+}
+
+agregarBotonesWhatsapp();
