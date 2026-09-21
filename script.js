@@ -131,6 +131,29 @@ function evaluarVencimientoContratos() {
 
 evaluarVencimientoContratos();
 
+// Números del panel calculados a partir de las propiedades y los contratos cargados
+function actualizarPanel() {
+    const contar = function (estado) {
+        return document.querySelectorAll('#propiedades .card[data-estado="' + estado + '"]').length;
+    };
+    const valores = {
+        "panel-total": document.querySelectorAll("#propiedades .card[data-estado]").length,
+        "panel-alquiladas": contar("alquilada"),
+        "panel-disponibles": contar("disponible"),
+        "panel-mantenimiento": contar("mantenimiento"),
+        "panel-por-vencer": document.querySelectorAll("#contratos .estado-contrato .badge.bg-danger").length
+    };
+
+    Object.keys(valores).forEach(function (id) {
+        const elemento = document.getElementById(id);
+        if (elemento) {
+            elemento.textContent = valores[id];
+        }
+    });
+}
+
+actualizarPanel();
+
 const campoBusquedaPersonas = document.getElementById("buscador-personas");
 const botonesFiltroPersona = document.querySelectorAll(".filtro-persona-btn");
 const tarjetasPersonas = document.querySelectorAll(".persona-card[data-tipo]");
@@ -223,6 +246,7 @@ function agregarBotonesWhatsapp() {
 }
 
 agregarBotonesWhatsapp();
+
 
 // ---------- Cerrar el menú desplegable al elegir una sección (celular) ----------
 const menuDesplegable = document.getElementById("sidebarOffcanvas");
