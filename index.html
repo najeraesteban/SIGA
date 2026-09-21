@@ -20,59 +20,49 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-dark d-md-none" style="background-color: var(--pino);" aria-label="Navegación móvil">
+        <nav class="navbar navbar-expand-lg sticky-top navbar-siga" aria-label="Navegación principal">
         <div class="container-fluid">
             <a class="navbar-brand fw-semibold" href="#dashboard">SIGA</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas"
                 aria-controls="sidebarOffcanvas" aria-label="Abrir navegación">
                 <span class="navbar-toggler-icon"></span>
             </button>
-        </div>
-    </nav>
 
-    <div class="offcanvas offcanvas-start" style="background-color: var(--pino);" tabindex="-1" id="sidebarOffcanvas"
-        aria-labelledby="sidebarOffcanvasLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title text-white" id="sidebarOffcanvasLabel">SIGA</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-                aria-label="Cerrar"></button>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas"
+                aria-labelledby="sidebarOffcanvasLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="sidebarOffcanvasLabel">SIGA</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a href="#dashboard" class="nav-link">Panel</a></li>
+                        <li class="nav-item"><a href="#propiedades" class="nav-link">Propiedades</a></li>
+                        <li class="nav-item"><a href="#contratos" class="nav-link">Contratos</a></li>
+                        <li class="nav-item"><a href="#propietarios" class="nav-link">Propietarios</a></li>
+                        <li class="nav-item"><a href="#pagos" class="nav-link">Pagos</a></li>
+                        <li class="nav-item"><a href="#sobre-nosotros" class="nav-link">Sobre Nosotros</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="offcanvas-body">
-            <ul class="nav nav-pills flex-column">
-                <li class="nav-item"><a href="#dashboard" class="nav-link text-white"
-                        data-bs-dismiss="offcanvas">Panel</a></li>
-                <li class="nav-item"><a href="#propiedades" class="nav-link text-white"
-                        data-bs-dismiss="offcanvas">Propiedades</a></li>
-                <li class="nav-item"><a href="#contratos" class="nav-link text-white"
-                        data-bs-dismiss="offcanvas">Contratos</a></li>
-                <li class="nav-item"><a href="#propietarios" class="nav-link text-white"
-                        data-bs-dismiss="offcanvas">Propietarios</a></li>
-                <li class="nav-item"><a href="#pagos" class="nav-link text-white" data-bs-dismiss="offcanvas">Pagos</a>
-                </li>
-                <li class="nav-item"><a href="#sobre-nosotros" class="nav-link text-white"
-                        data-bs-dismiss="offcanvas">Sobre Nosotros</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <nav class="sidebar-siga d-none d-md-flex flex-column p-3" aria-label="Navegación principal">
-        <a class="navbar-brand fw-semibold mb-4 text-white" href="#dashboard">SIGA</a>
-        <ul class="nav nav-pills flex-column">
-            <li class="nav-item"><a href="#dashboard" class="nav-link">Panel</a></li>
-            <li class="nav-item"><a href="#propiedades" class="nav-link">Propiedades</a></li>
-            <li class="nav-item"><a href="#contratos" class="nav-link">Contratos</a></li>
-            <li class="nav-item"><a href="#propietarios" class="nav-link">Propietarios</a></li>
-            <li class="nav-item"><a href="#pagos" class="nav-link">Pagos</a></li>
-            <li class="nav-item"><a href="#sobre-nosotros" class="nav-link">Sobre Nosotros</a></li>
-        </ul>
     </nav>
 
     <div class="content-wrapper">
 
-        <header class="hero-siga text-center py-5">
-            <div class="container">
-                <h1 class="display-5 fw-semibold mb-2">SIGA</h1>
-                <p class="lead mb-0">Sistema Integral de Gestión de Alquileres</p>
+                <header class="hero-siga pt-5">
+            <div class="container position-relative z-1">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <h1 class="display-1 fw-semibold mb-2">SIGA</h1>
+                        <p class="lead mb-3">Sistema Integral de Gestión de Alquileres</p>
+                        <p class="mb-4 opacity-75">Propiedades, contratos, pagos y vencimientos de tu inmobiliaria en un solo panel.</p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="#dashboard" class="btn btn-lg btn-ocre">Ver el panel</a>
+                            <a href="#propiedades" class="btn btn-lg btn-outline-light">Ver propiedades</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
 
