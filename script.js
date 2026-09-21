@@ -223,3 +223,22 @@ function agregarBotonesWhatsapp() {
 }
 
 agregarBotonesWhatsapp();
+
+// ---------- Cerrar el menú desplegable al elegir una sección (celular) ----------
+const menuDesplegable = document.getElementById("sidebarOffcanvas");
+
+document.querySelectorAll("#sidebarOffcanvas .nav-link").forEach(function (link) {
+    link.addEventListener("click", function (evento) {
+        const menu = bootstrap.Offcanvas.getInstance(menuDesplegable);
+
+        // Solo actúa si el menú está abierto (en pantallas chicas): primero lo cierra
+        // y recién después salta a la sección, para que el scroll no se corte.
+        if (menu && menuDesplegable.classList.contains("show")) {
+            evento.preventDefault();
+            menuDesplegable.addEventListener("hidden.bs.offcanvas", function () {
+                window.location.hash = link.getAttribute("href");
+            }, { once: true });
+            menu.hide();
+        }
+    });
+});
