@@ -1,32 +1,35 @@
 :root {
-    --tinta: #23241F;
-    --piedra: #F4EEE1;
-    --superficie: #FBF8F2;
-    --borde: #D8CBAF;
+    --tinta: #1B2420;
+    --piedra: #EDEFEA;
+    --superficie: #FFFFFF;
+    --borde: #D6D9D2;
 
-    --pino: #1F3B2E;
-    --pino-claro: #3B5A48;
+    --pino: #2F4A40;
+    --pino-claro: #4E6E61;
 
-    --ocre: #9C7A32;
-    --ocre-suave: #EFE3C4;
+    --ocre: #B9822E;
+    --ocre-suave: #F2E4C8;
 
-    --ladrillo: #A63D2F;
-    --ladrillo-suave: #F1DAD3;
+    --ladrillo: #A8493F;
+    --ladrillo-suave: #F1DCD8;
 
-    --verde-ok: #3D6B4A;
+    --verde-ok: #3E6B4F;
     --verde-ok-suave: #DCE8DD;
 
-    --fuente-titulo: "Zilla Slab", Georgia, serif;
+    --fuente-titulo: "Source Serif 4", Georgia, serif;
     --fuente-texto: "IBM Plex Sans", Arial, sans-serif;
-    --fuente-datos: "IBM Plex Mono", monospace;
 
-    --radio-borde: 2px;
     --espaciado-base: 1rem;
+    --ancho-nav: 15rem;
+
+    --radio-borde: 8px;
+    --sombra-card: 0 2px 6px rgba(0, 0, 0, 0.1);
+
 
     --bs-primary: var(--pino);
-    --bs-primary-rgb: 31, 59, 46;
+    --bs-primary-rgb: 47, 74, 64;
     --bs-secondary: var(--ocre);
-    --bs-secondary-rgb: 156, 122, 50;
+    --bs-secondary-rgb: 185, 130, 46;
     --bs-body-bg: var(--piedra);
     --bs-body-color: var(--tinta);
     --bs-body-font-family: var(--fuente-texto);
@@ -44,8 +47,55 @@ h1, h2, h3, .navbar-brand {
 }
 
 .hero-siga {
+    position: relative;
+    isolation: isolate;
     background-color: var(--pino);
+    background-image: url("img/siga-hero.jpg");
+    background-size: cover;
+    background-position: center right;
     color: #fff;
+    padding-bottom: clamp(5rem, 11vw, 8rem); /* deja lugar para la silueta de casas */
+}
+
+/* Capa de color: oscura donde va el texto y casi transparente a la derecha */
+.hero-siga::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg,
+        rgba(27, 36, 32, 0.80) 0%,
+        rgba(47, 74, 64, 0.62) 40%,
+        rgba(47, 74, 64, 0.18) 75%,
+        rgba(47, 74, 64, 0.05) 100%);
+    z-index: -2;
+}
+
+/* Silueta de casas que sube desde el fondo de la página (repite las tres casitas de la foto) */
+.hero-siga::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: clamp(3rem, 7vw, 5.5rem);
+    background-color: var(--piedra);
+    clip-path: polygon(
+        0% 100%, 0% 78%, 10% 78%, 17% 8%, 24% 78%,
+        44% 78%, 51% 42%, 58% 78%,
+        74% 78%, 81% 24%, 88% 78%,
+        100% 78%, 100% 100%
+    );
+    z-index: -1;
+}
+
+.hero-siga h1,
+.hero-siga p {
+    text-shadow: 0 1px 14px rgba(0, 0, 0, 0.35);
+}
+
+.hero-siga .lead {
+    font-family: var(--fuente-titulo);
+    color: var(--ocre-suave);
 }
 
 .card {
@@ -77,7 +127,7 @@ footer {
     color: #fff;
 }
 
-.sidebar-siga {
+/*.sidebar-siga {
     background-color: var(--pino);
     width: var(--ancho-nav);
     position: fixed;
@@ -93,7 +143,9 @@ footer {
 }
 
 .sidebar-siga .nav-link:hover,
-.sidebar-siga .nav-link.active {
+.sidebar-siga .nav-link.active,
+.offcanvas .nav-link:hover,
+.offcanvas .nav-link.active {
     color: #fff;
     background-color: rgba(255, 255, 255, 0.12);
 }
@@ -106,31 +158,147 @@ footer {
     .content-wrapper {
         margin-left: var(--ancho-nav);
     }
-}
+} 
+*/
 
-@media (max-width: 480px) {
-    .propiedad-card img {
-        height: 160px;
+@media (max-width: 576px) {
+    #sobre-nosotros {
+        padding-bottom: 4rem;
     }
 }
 
-.siga-topbar { background: var(--pino); border-bottom: 3px solid var(--ocre); }
-.siga-marca { display: flex; align-items: center; gap: 0.6rem; color: var(--piedra); text-decoration: none; font-family: var(--fuente-titulo); font-size: 1.3rem; font-weight: 600; }
-.siga-sello { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--ocre); color: var(--pino); font-family: var(--fuente-titulo); font-weight: 700; }
-.siga-toggle { background: none; border: none; padding: 0.4rem; display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
-.siga-toggle span { width: 24px; height: 2px; background: var(--piedra); display: block; }
-.siga-offcanvas { background: var(--pino); color: var(--piedra); width: 16rem; }
-.siga-offcanvas .nav-link { color: rgba(255, 255, 255, 0.85); padding: 0.75rem 1.5rem; border-left: 3px solid transparent; }
-.siga-offcanvas .nav-link:hover, .siga-offcanvas .nav-link.active { color: #fff; border-left-color: var(--ocre); background: rgba(255, 255, 255, 0.06); }
-.siga-input { border: none; border-bottom: 2px solid var(--borde); background: transparent; border-radius: 0; padding: 0.4rem 0.2rem; min-width: 220px; font-family: var(--fuente-texto); }
-.siga-input:focus { outline: none; border-bottom-color: var(--pino); }
-.siga-ledger { display: flex; flex-wrap: wrap; border-top: 1px solid var(--borde); border-left: 1px solid var(--borde); }
-.siga-ledger-item { flex: 1 1 9rem; padding: 1.5rem 1rem; border-right: 1px solid var(--borde); border-bottom: 1px solid var(--borde); text-align: center; }
-.siga-ledger-numero { font-family: var(--fuente-datos); font-size: 2.2rem; font-weight: 600; color: var(--pino); margin-bottom: 0.25rem; }
-.siga-ledger-label { font-size: 0.85rem; color: var(--pino-claro); margin: 0; }
+.btn-scroll-top {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--ocre);
+    color: #fff;
+    border: none;
+    font-size: 1.3rem;
+    box-shadow: var(--sombra-card);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    z-index: 1040;
+}
 
-.card { border: 1px solid var(--borde); border-left: 4px solid var(--ocre); box-shadow: none !important; background: var(--superficie); }
-.card:hover { border-left-color: var(--pino); }
-.list-group-item { background: var(--superficie); border-color: var(--borde); }
-.siga-footer { background: var(--pino); color: var(--piedra); }
-.siga-tabla-header { background: var(--pino); color: var(--piedra); }
+.btn-scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.btn-scroll-top:hover {
+    background-color: #a3721f;
+}
+
+.btn-whatsapp-custom {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #25D366;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-whatsapp-custom:hover {
+    background-color: #1ebe5a;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+/* Bootstrap 5.3 trae fijos el azul de .btn-primary y el foco de los inputs:
+   se redefinen acá para que sigan la paleta del proyecto */
+.btn-primary {
+    --bs-btn-bg: var(--pino);
+    --bs-btn-border-color: var(--pino);
+    --bs-btn-hover-bg: var(--pino-claro);
+    --bs-btn-hover-border-color: var(--pino-claro);
+    --bs-btn-active-bg: var(--pino-claro);
+    --bs-btn-active-border-color: var(--pino-claro);
+    --bs-btn-disabled-bg: var(--pino);
+    --bs-btn-disabled-border-color: var(--pino);
+    --bs-btn-focus-shadow-rgb: 47, 74, 64;
+}
+
+.form-control:focus {
+    border-color: var(--pino-claro);
+    box-shadow: 0 0 0 0.25rem rgba(47, 74, 64, 0.25);
+}
+/* ---------- Navbar horizontal fija ---------- */
+html {
+    scroll-padding-top: 5rem; /* evita que la navbar tape el título al saltar a una sección */
+}
+
+.navbar-siga {
+    border-bottom: 1px solid var(--borde);
+    box-shadow: 0 1px 12px rgba(27, 36, 32, 0.06);
+}
+
+/* El fondo translúcido con desenfoque va en un pseudo-elemento para no afectar al menú desplegable */
+.navbar-siga::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(237, 239, 234, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+.navbar-siga .navbar-brand {
+    color: var(--pino);
+    font-size: 1.5rem;
+}
+
+.navbar-siga .nav-link {
+    color: var(--tinta);
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.navbar-siga .nav-link:hover,
+.navbar-siga .nav-link.active {
+    color: var(--pino);
+    border-bottom-color: var(--ocre);
+}
+
+/* Botón ocre (mismo mecanismo de variables que usa Bootstrap) */
+.btn-ocre {
+    --bs-btn-color: var(--tinta);
+    --bs-btn-bg: var(--ocre);
+    --bs-btn-border-color: var(--ocre);
+    --bs-btn-hover-color: var(--tinta);
+    --bs-btn-hover-bg: var(--ocre-suave);
+    --bs-btn-hover-border-color: var(--ocre-suave);
+    --bs-btn-active-color: var(--tinta);
+    --bs-btn-active-bg: var(--ocre-suave);
+    --bs-btn-active-border-color: var(--ocre-suave);
+    --bs-btn-focus-shadow-rgb: 185, 130, 46;
+}
+
+/* ---------- Panel general ---------- */
+.panel-neutro { border-left: 4px solid var(--pino); }
+.panel-verde { border-left: 4px solid var(--verde-ok); }
+.panel-ocre { border-left: 4px solid var(--ocre); }
+.panel-ladrillo { border-left: 4px solid var(--ladrillo); }
+
+.color-alquiladas { background-color: var(--verde-ok); }
+.color-disponibles { background-color: var(--ocre); }
+.color-mantenimiento { background-color: var(--ladrillo); }
+
+.leyenda-punto {
+    display: inline-block;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    margin-right: 0.4rem;

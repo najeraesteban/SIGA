@@ -9,86 +9,185 @@
         content="Administrá propiedades, contratos, pagos y vencimientos de tu inmobiliaria desde un solo panel.">
     <meta name="author" content="SIGA">
     <meta name="robots" content="index, follow">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏠%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%231F3B2E'/%3E%3Ctext x='50' y='64' font-size='46' font-family='Georgia,serif' fill='%23F4EEE1' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
     <link
-        href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header class="siga-topbar">
-        <div class="container-fluid d-flex align-items-center justify-content-between py-2">
-            <a class="siga-marca" href="#dashboard">
-                <span class="siga-sello">S</span>
-                SIGA
-            </a>
-            <button class="siga-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#navSiga"
-                aria-controls="navSiga" aria-label="Abrir menú">
-                <span></span><span></span><span></span>
+    <nav class="navbar navbar-expand-lg sticky-top navbar-siga" aria-label="Navegación principal">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-semibold" href="#dashboard">SIGA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas"
+                aria-controls="sidebarOffcanvas" aria-label="Abrir navegación">
+                <span class="navbar-toggler-icon"></span>
             </button>
-        </div>
-    </header>
 
-    <div class="offcanvas offcanvas-start siga-offcanvas" tabindex="-1" id="navSiga">
-        <div class="offcanvas-header">
-            <h2 class="offcanvas-title h5 mb-0">SIGA</h2>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-                aria-label="Cerrar"></button>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas"
+                aria-labelledby="sidebarOffcanvasLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="sidebarOffcanvasLabel">SIGA</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a href="#dashboard" class="nav-link">Panel</a></li>
+                        <li class="nav-item"><a href="#propiedades" class="nav-link">Propiedades</a></li>
+                        <li class="nav-item"><a href="#contratos" class="nav-link">Contratos</a></li>
+                        <li class="nav-item"><a href="#propietarios" class="nav-link">Propietarios</a></li>
+                        <li class="nav-item"><a href="#pagos" class="nav-link">Pagos</a></li>
+                        <li class="nav-item"><a href="#sobre-nosotros" class="nav-link">Sobre Nosotros</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="offcanvas-body p-0">
-            <ul class="nav flex-column">
-                <li class="nav-item"><a class="nav-link" href="#dashboard" data-bs-dismiss="offcanvas">Panel</a></li>
-                <li class="nav-item"><a class="nav-link" href="#propiedades" data-bs-dismiss="offcanvas">Propiedades</a>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="#contratos" data-bs-dismiss="offcanvas">Contratos</a>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="#propietarios"
-                        data-bs-dismiss="offcanvas">Propietarios</a></li>
-                <li class="nav-item"><a class="nav-link" href="#pagos" data-bs-dismiss="offcanvas">Pagos</a></li>
-                <li class="nav-item"><a class="nav-link" href="#sobre-nosotros" data-bs-dismiss="offcanvas">Sobre
-                        Nosotros</a></li>
-            </ul>
-        </div>
-    </div>
+    </nav>
 
-        <header class="hero-siga text-center py-5">
-            <div class="container">
-                <h1 class="display-5 fw-semibold mb-2">SIGA</h1>
-                <p class="lead mb-0">Sistema Integral de Gestión de Alquileres</p>
+    <div class="content-wrapper">
+
+        <header class="hero-siga pt-5">
+            <div class="container position-relative z-1">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <h1 class="display-1 fw-semibold mb-2">SIGA</h1>
+                        <p class="lead mb-3">Sistema Integral de Gestión de Alquileres</p>
+                        <p class="mb-4 opacity-75">Propiedades, contratos, pagos y vencimientos de tu inmobiliaria en un solo panel.</p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="#dashboard" class="btn btn-lg btn-ocre">Ver el panel</a>
+                            <a href="#propiedades" class="btn btn-lg btn-outline-light">Ver propiedades</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
 
         <main>
             <section id="dashboard" class="container py-5">
-                <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
                     <h2 class="mb-0">Panel General</h2>
-                    <input type="text" id="buscador-panel" class="siga-input" placeholder="Buscar en el panel...">
+                    <input type="text" id="buscador-panel" class="form-control w-auto" aria-label="Buscar en el panel"
+                        placeholder="Buscar en el panel..." style="min-width: 200px;">
                 </div>
-                <div class="siga-ledger">
-                    <div class="siga-ledger-item">
-                        <p class="siga-ledger-numero">128</p>
-                        <p class="siga-ledger-label">Propiedades</p>
+                <div class="row row-cols-1 row-cols-lg-2 g-3 mb-3">
+                    <div class="col">
+                        <div class="card h-100 shadow-sm panel-verde">
+                            <div class="card-body">
+                                <h3 class="h6 text-uppercase text-muted mb-1">Ocupación</h3>
+                                <p class="display-5 fw-semibold mb-0"><span id="panel-ocupacion">57</span>%</p>
+                                <p id="panel-ocupacion-detalle" class="text-muted mb-3">17 de 30 propiedades alquiladas</p>
+                                <div class="progress-stacked" role="group" aria-label="Propiedades por estado">
+                                    <div id="barra-alquiladas" class="progress" role="progressbar" aria-label="Alquiladas"
+                                        aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 56.7%">
+                                        <div class="progress-bar color-alquiladas"></div>
+                                    </div>
+                                    <div id="barra-disponibles" class="progress" role="progressbar" aria-label="Disponibles"
+                                        aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33.3%">
+                                        <div class="progress-bar color-disponibles"></div>
+                                    </div>
+                                    <div id="barra-mantenimiento" class="progress" role="progressbar" aria-label="En mantenimiento"
+                                        aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10.0%">
+                                        <div class="progress-bar color-mantenimiento"></div>
+                                    </div>
+                                </div>
+                                <ul class="list-inline small text-muted mt-2 mb-0">
+                                    <li class="list-inline-item"><span class="leyenda-punto color-alquiladas"></span>Alquiladas</li>
+                                    <li class="list-inline-item"><span class="leyenda-punto color-disponibles"></span>Disponibles</li>
+                                    <li class="list-inline-item"><span class="leyenda-punto color-mantenimiento"></span>En mantenimiento</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="siga-ledger-item">
-                        <p class="siga-ledger-numero">96</p>
-                        <p class="siga-ledger-label">Alquiladas</p>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm panel-verde">
+                            <div class="card-body">
+                                <h3 class="h6 text-uppercase text-muted mb-1">Ingreso mensual estimado</h3>
+                                <p id="panel-ingreso" class="display-5 fw-semibold mb-0">$11.215.000</p>
+                                <p id="panel-ingreso-detalle" class="text-muted mb-3">según 17 contratos vigentes</p>
+                                <div id="barra-cobrado" class="progress" role="progressbar" aria-label="Cobrado del mes"
+                                    aria-valuenow="74" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar color-alquiladas" style="width: 74.1%"></div>
+                                </div>
+                                <p id="panel-cobrado" class="small text-muted mt-2 mb-0">Cobrado del mes: $8.305.000 de $11.215.000</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="siga-ledger-item">
-                        <p class="siga-ledger-numero">24</p>
-                        <p class="siga-ledger-label">Disponibles</p>
+                </div>
+
+                <div class="row row-cols-2 row-cols-md-3 g-3 mb-3">
+                    <div class="col">
+                        <div class="card text-center h-100 shadow-sm panel-neutro">
+                            <div class="card-body">
+                                <h3 class="h6 text-uppercase text-muted mb-1">Propiedades</h3>
+                                <p id="panel-total" class="fs-3 fw-semibold mb-0">30</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="siga-ledger-item">
-                        <p class="siga-ledger-numero">8</p>
-                        <p class="siga-ledger-label">En mantenimiento</p>
+                    <div class="col">
+                        <div class="card text-center h-100 shadow-sm panel-verde">
+                            <div class="card-body">
+                                <h3 class="h6 text-uppercase text-muted mb-1">Alquiladas</h3>
+                                <p id="panel-alquiladas" class="fs-3 fw-semibold mb-0">17</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="siga-ledger-item">
-                        <p class="siga-ledger-numero">6</p>
-                        <p class="siga-ledger-label">Contratos por vencer</p>
+                    <div class="col">
+                        <div class="card text-center h-100 shadow-sm panel-ocre">
+                            <div class="card-body">
+                                <h3 class="h6 text-uppercase text-muted mb-1">Disponibles</h3>
+                                <p id="panel-disponibles" class="fs-3 fw-semibold mb-0">10</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center h-100 shadow-sm panel-ladrillo">
+                            <div class="card-body">
+                                <h3 class="h6 text-uppercase text-muted mb-1">En mantenimiento</h3>
+                                <p id="panel-mantenimiento" class="fs-3 fw-semibold mb-0">3</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center h-100 shadow-sm panel-ocre">
+                            <div class="card-body">
+                                <h3 class="h6 text-uppercase text-muted mb-1">Contratos por vencer</h3>
+                                <p id="panel-por-vencer" class="fs-3 fw-semibold mb-0">3</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center h-100 shadow-sm panel-ladrillo">
+                            <div class="card-body">
+                                <h3 class="h6 text-uppercase text-muted mb-1">Pagos pendientes</h3>
+                                <p id="panel-pendientes" class="fs-3 fw-semibold mb-0">5</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 g-3">
+                    <div class="col">
+                        <div class="card shadow-sm panel-ocre">
+                            <div class="card-body">
+                                <h3 class="h5 card-title mb-3">Requiere atención</h3>
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+                                        <h4 class="h6 text-uppercase text-muted">Contratos por vencer
+                                            <span id="atencion-contratos" class="badge text-bg-warning ms-1">3</span></h4>
+                                        <ul id="lista-por-vencer" class="list-group list-group-flush"></ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h4 class="h6 text-uppercase text-muted">Pagos pendientes
+                                            <span id="atencion-pagos" class="badge bg-danger ms-1">5</span></h4>
+                                        <ul id="lista-pendientes" class="list-group list-group-flush"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -102,11 +201,13 @@
                             data-filtro="alquilada">Alquiladas</button>
                         <button class="btn btn-sm btn-outline-secondary filtro-btn"
                             data-filtro="disponible">Disponibles</button>
+                        <button class="btn btn-sm btn-outline-secondary filtro-btn"
+                            data-filtro="mantenimiento">En mantenimiento</button>
                     </div>
-                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                         <div class="col">
                             <article class="card propiedad-card h-100 shadow-sm" data-estado="alquilada">
-                                <img src="img/dpto.jpg" class="card-img-top"
+                                <img src="img/propiedades/dpto-1.jpg" loading="lazy" class="card-img-top"
                                     alt="Departamento en San Martín 1234, San Miguel de Tucumán">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between align-items-start">
@@ -121,7 +222,8 @@
                         </div>
                         <div class="col">
                             <article class="card propiedad-card h-100 shadow-sm" data-estado="disponible">
-                                <img src="img/casa.jpg" class="card-img-top" alt="Casa en Belgrano 500, Yerba Buena">
+                                <img src="img/propiedades/casa-1.jpg" loading="lazy" class="card-img-top"
+                                    alt="Casa en Belgrano 500, Yerba Buena">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between align-items-start">
                                         <h3 class="h5 card-title mb-1">Casa</h3>
@@ -133,83 +235,1043 @@
                                 </div>
                             </article>
                         </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="disponible">
+                                <img src="img/propiedades/casa-6.jpg" loading="lazy" class="card-img-top"
+                                    alt="Casa en Muñecas 1481, San Miguel de Tucumán">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Casa</h3>
+                                        <span class="badge text-bg-secondary">Disponible</span>
+                                    </div>
+                                    <p class="card-text mb-1">Muñecas 1481, San Miguel de Tucumán</p>
+                                    <p class="card-text mb-1 text-muted">4 habitaciones · 3 baños · 222 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$995.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="alquilada">
+                                <img src="img/propiedades/dpto-4.jpg" loading="lazy" class="card-img-top"
+                                    alt="Departamento en Maipú 1700, San Miguel de Tucumán">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Departamento</h3>
+                                        <span class="badge text-bg-success">Alquilada</span>
+                                    </div>
+                                    <p class="card-text mb-1">Maipú 1700, San Miguel de Tucumán</p>
+                                    <p class="card-text mb-1 text-muted">2 habitaciones · 1 baño · 59 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$490.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="alquilada">
+                                <img src="img/propiedades/dpto-2.jpg" loading="lazy" class="card-img-top"
+                                    alt="Departamento en Maipú 2912, San Miguel de Tucumán">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Departamento</h3>
+                                        <span class="badge text-bg-success">Alquilada</span>
+                                    </div>
+                                    <p class="card-text mb-1">Maipú 2912, San Miguel de Tucumán</p>
+                                    <p class="card-text mb-1 text-muted">3 habitaciones · 2 baños · 87 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$555.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="mantenimiento">
+                                <img src="img/propiedades/dpto-3.jpg" loading="lazy" class="card-img-top"
+                                    alt="Departamento en Buenos Aires 2273, San Miguel de Tucumán">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Departamento</h3>
+                                        <span class="badge text-bg-warning">En mantenimiento</span>
+                                    </div>
+                                    <p class="card-text mb-1">Buenos Aires 2273, San Miguel de Tucumán</p>
+                                    <p class="card-text mb-1 text-muted">2 habitaciones · 1 baño · 67 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$460.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="alquilada">
+                                <img src="img/propiedades/casa-4.jpg" loading="lazy" class="card-img-top"
+                                    alt="Casa en Catamarca 2681, Tafí Viejo">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Casa</h3>
+                                        <span class="badge text-bg-success">Alquilada</span>
+                                    </div>
+                                    <p class="card-text mb-1">Catamarca 2681, Tafí Viejo</p>
+                                    <p class="card-text mb-1 text-muted">4 habitaciones · 3 baños · 184 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$950.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="alquilada">
+                                <img src="img/propiedades/dpto-5.jpg" loading="lazy" class="card-img-top"
+                                    alt="Departamento en Laprida 590, San Miguel de Tucumán">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Departamento</h3>
+                                        <span class="badge text-bg-success">Alquilada</span>
+                                    </div>
+                                    <p class="card-text mb-1">Laprida 590, San Miguel de Tucumán</p>
+                                    <p class="card-text mb-1 text-muted">3 habitaciones · 2 baños · 88 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$605.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="alquilada">
+                                <img src="img/propiedades/casa-5.jpg" loading="lazy" class="card-img-top"
+                                    alt="Casa en Independencia 1581, Yerba Buena">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Casa</h3>
+                                        <span class="badge text-bg-success">Alquilada</span>
+                                    </div>
+                                    <p class="card-text mb-1">Independencia 1581, Yerba Buena</p>
+                                    <p class="card-text mb-1 text-muted">4 habitaciones · 2 baños · 190 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$995.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="alquilada">
+                                <img src="img/propiedades/dpto-6.jpg" loading="lazy" class="card-img-top"
+                                    alt="Departamento en Lavalle 1581, Tafí Viejo">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Departamento</h3>
+                                        <span class="badge text-bg-success">Alquilada</span>
+                                    </div>
+                                    <p class="card-text mb-1">Lavalle 1581, Tafí Viejo</p>
+                                    <p class="card-text mb-1 text-muted">2 habitaciones · 1 baño · 60 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$490.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="alquilada">
+                                <img src="img/propiedades/casa-3.jpg" loading="lazy" class="card-img-top"
+                                    alt="Casa en Moreno 347, Tafí Viejo">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Casa</h3>
+                                        <span class="badge text-bg-success">Alquilada</span>
+                                    </div>
+                                    <p class="card-text mb-1">Moreno 347, Tafí Viejo</p>
+                                    <p class="card-text mb-1 text-muted">4 habitaciones · 2 baños · 202 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$965.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="alquilada">
+                                <img src="img/propiedades/dpto-1.jpg" loading="lazy" class="card-img-top"
+                                    alt="Departamento en Buenos Aires 112, San Miguel de Tucumán">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Departamento</h3>
+                                        <span class="badge text-bg-success">Alquilada</span>
+                                    </div>
+                                    <p class="card-text mb-1">Buenos Aires 112, San Miguel de Tucumán</p>
+                                    <p class="card-text mb-1 text-muted">1 habitación · 1 baño · 42 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$325.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="alquilada">
+                                <img src="img/propiedades/casa-2.jpg" loading="lazy" class="card-img-top"
+                                    alt="Casa en Corrientes 812, San Miguel de Tucumán">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Casa</h3>
+                                        <span class="badge text-bg-success">Alquilada</span>
+                                    </div>
+                                    <p class="card-text mb-1">Corrientes 812, San Miguel de Tucumán</p>
+                                    <p class="card-text mb-1 text-muted">2 habitaciones · 1 baño · 74 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$730.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="mantenimiento">
+                                <img src="img/propiedades/dpto-4.jpg" loading="lazy" class="card-img-top"
+                                    alt="Departamento en Rivadavia 2325, San Miguel de Tucumán">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Departamento</h3>
+                                        <span class="badge text-bg-warning">En mantenimiento</span>
+                                    </div>
+                                    <p class="card-text mb-1">Rivadavia 2325, San Miguel de Tucumán</p>
+                                    <p class="card-text mb-1 text-muted">2 habitaciones · 1 baño · 73 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$480.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="disponible">
+                                <img src="img/propiedades/dpto-2.jpg" loading="lazy" class="card-img-top"
+                                    alt="Departamento en Maipú 1012, San Miguel de Tucumán">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Departamento</h3>
+                                        <span class="badge text-bg-secondary">Disponible</span>
+                                    </div>
+                                    <p class="card-text mb-1">Maipú 1012, San Miguel de Tucumán</p>
+                                    <p class="card-text mb-1 text-muted">3 habitaciones · 1 baño · 89 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$595.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="disponible">
+                                <img src="img/propiedades/dpto-3.jpg" loading="lazy" class="card-img-top"
+                                    alt="Departamento en Crisóstomo Álvarez 1325, San Miguel de Tucumán">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Departamento</h3>
+                                        <span class="badge text-bg-secondary">Disponible</span>
+                                    </div>
+                                    <p class="card-text mb-1">Crisóstomo Álvarez 1325, San Miguel de Tucumán</p>
+                                    <p class="card-text mb-1 text-muted">2 habitaciones · 1 baño · 55 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$470.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="alquilada">
+                                <img src="img/propiedades/dpto-5.jpg" loading="lazy" class="card-img-top"
+                                    alt="Departamento en Lavalle 258, Tafí Viejo">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Departamento</h3>
+                                        <span class="badge text-bg-success">Alquilada</span>
+                                    </div>
+                                    <p class="card-text mb-1">Lavalle 258, Tafí Viejo</p>
+                                    <p class="card-text mb-1 text-muted">2 habitaciones · 1 baño · 55 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$480.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="disponible">
+                                <img src="img/propiedades/dpto-6.jpg" loading="lazy" class="card-img-top"
+                                    alt="Departamento en Independencia 1147, Yerba Buena">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Departamento</h3>
+                                        <span class="badge text-bg-secondary">Disponible</span>
+                                    </div>
+                                    <p class="card-text mb-1">Independencia 1147, Yerba Buena</p>
+                                    <p class="card-text mb-1 text-muted">3 habitaciones · 2 baños · 94 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$595.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="alquilada">
+                                <img src="img/propiedades/dpto-1.jpg" loading="lazy" class="card-img-top"
+                                    alt="Departamento en Las Heras 2625, Yerba Buena">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Departamento</h3>
+                                        <span class="badge text-bg-success">Alquilada</span>
+                                    </div>
+                                    <p class="card-text mb-1">Las Heras 2625, Yerba Buena</p>
+                                    <p class="card-text mb-1 text-muted">2 habitaciones · 1 baño · 71 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$470.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="disponible">
+                                <img src="img/propiedades/dpto-4.jpg" loading="lazy" class="card-img-top"
+                                    alt="Departamento en Las Heras 1173, Yerba Buena">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Departamento</h3>
+                                        <span class="badge text-bg-secondary">Disponible</span>
+                                    </div>
+                                    <p class="card-text mb-1">Las Heras 1173, Yerba Buena</p>
+                                    <p class="card-text mb-1 text-muted">2 habitaciones · 1 baño · 57 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$470.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="disponible">
+                                <img src="img/propiedades/casa-1.jpg" loading="lazy" class="card-img-top"
+                                    alt="Casa en Av. Aconquija 725, Yerba Buena">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Casa</h3>
+                                        <span class="badge text-bg-secondary">Disponible</span>
+                                    </div>
+                                    <p class="card-text mb-1">Av. Aconquija 725, Yerba Buena</p>
+                                    <p class="card-text mb-1 text-muted">2 habitaciones · 1 baño · 97 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$695.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="alquilada">
+                                <img src="img/propiedades/casa-6.jpg" loading="lazy" class="card-img-top"
+                                    alt="Casa en Av. Alem 581, Tafí Viejo">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Casa</h3>
+                                        <span class="badge text-bg-success">Alquilada</span>
+                                    </div>
+                                    <p class="card-text mb-1">Av. Alem 581, Tafí Viejo</p>
+                                    <p class="card-text mb-1 text-muted">3 habitaciones · 1 baño · 111 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$830.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="alquilada">
+                                <img src="img/propiedades/casa-4.jpg" loading="lazy" class="card-img-top"
+                                    alt="Casa en Lavalle 1866, Yerba Buena">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Casa</h3>
+                                        <span class="badge text-bg-success">Alquilada</span>
+                                    </div>
+                                    <p class="card-text mb-1">Lavalle 1866, Yerba Buena</p>
+                                    <p class="card-text mb-1 text-muted">2 habitaciones · 1 baño · 75 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$680.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="disponible">
+                                <img src="img/propiedades/dpto-2.jpg" loading="lazy" class="card-img-top"
+                                    alt="Departamento en Buenos Aires 1666, San Miguel de Tucumán">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Departamento</h3>
+                                        <span class="badge text-bg-secondary">Disponible</span>
+                                    </div>
+                                    <p class="card-text mb-1">Buenos Aires 1666, San Miguel de Tucumán</p>
+                                    <p class="card-text mb-1 text-muted">2 habitaciones · 1 baño · 60 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$480.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="disponible">
+                                <img src="img/propiedades/casa-5.jpg" loading="lazy" class="card-img-top"
+                                    alt="Casa en Moreno 1512, Tafí Viejo">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Casa</h3>
+                                        <span class="badge text-bg-secondary">Disponible</span>
+                                    </div>
+                                    <p class="card-text mb-1">Moreno 1512, Tafí Viejo</p>
+                                    <p class="card-text mb-1 text-muted">3 habitaciones · 1 baño · 100 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$845.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="disponible">
+                                <img src="img/propiedades/casa-3.jpg" loading="lazy" class="card-img-top"
+                                    alt="Casa en Congreso 1481, Yerba Buena">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Casa</h3>
+                                        <span class="badge text-bg-secondary">Disponible</span>
+                                    </div>
+                                    <p class="card-text mb-1">Congreso 1481, Yerba Buena</p>
+                                    <p class="card-text mb-1 text-muted">3 habitaciones · 1 baño · 110 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$860.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="alquilada">
+                                <img src="img/propiedades/casa-2.jpg" loading="lazy" class="card-img-top"
+                                    alt="Casa en Catamarca 712, Tafí Viejo">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Casa</h3>
+                                        <span class="badge text-bg-success">Alquilada</span>
+                                    </div>
+                                    <p class="card-text mb-1">Catamarca 712, Tafí Viejo</p>
+                                    <p class="card-text mb-1 text-muted">3 habitaciones · 1 baño · 117 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$815.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="mantenimiento">
+                                <img src="img/propiedades/casa-1.jpg" loading="lazy" class="card-img-top"
+                                    alt="Casa en Av. Perón 2647, Yerba Buena">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Casa</h3>
+                                        <span class="badge text-bg-warning">En mantenimiento</span>
+                                    </div>
+                                    <p class="card-text mb-1">Av. Perón 2647, Yerba Buena</p>
+                                    <p class="card-text mb-1 text-muted">2 habitaciones · 1 baño · 73 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$680.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="alquilada">
+                                <img src="img/propiedades/casa-6.jpg" loading="lazy" class="card-img-top"
+                                    alt="Casa en Córdoba 2112, San Miguel de Tucumán">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Casa</h3>
+                                        <span class="badge text-bg-success">Alquilada</span>
+                                    </div>
+                                    <p class="card-text mb-1">Córdoba 2112, San Miguel de Tucumán</p>
+                                    <p class="card-text mb-1 text-muted">3 habitaciones · 2 baños · 120 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$830.000</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="card propiedad-card h-100 shadow-sm" data-estado="alquilada">
+                                <img src="img/propiedades/dpto-3.jpg" loading="lazy" class="card-img-top"
+                                    alt="Departamento en Marcos Paz 300, San Miguel de Tucumán">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h3 class="h5 card-title mb-1">Departamento</h3>
+                                        <span class="badge text-bg-success">Alquilada</span>
+                                    </div>
+                                    <p class="card-text mb-1">Marcos Paz 300, San Miguel de Tucumán</p>
+                                    <p class="card-text mb-1 text-muted">3 habitaciones · 2 baños · 81 m²</p>
+                                    <p class="card-text fw-semibold fs-5 mb-0">$555.000</p>
+                                </div>
+                            </article>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <section id="contratos" class="container py-5">
-                <h2 class="mb-4">Contratos</h2>
-                <div class="table-responsive">
-                    <table class="table table-striped table-hover align-middle">
-                        <thead class="table-dark">
-                            <tr>
-                                <th scope="col">N° Contrato</th>
-                                <th scope="col">Propiedad</th>
-                                <th scope="col">Inquilino</th>
-                                <th scope="col">Inicio</th>
-                                <th scope="col">Fin</th>
-                                <th scope="col">Alquiler</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>154</td>
-                                <td>Depto. San Martín 1234</td>
-                                <td>María Gómez</td>
-                                <td>01/08/2026</td>
-                                <td>31/07/2028</td>
-                                <td>$450.000</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
+    <h2 class="mb-4">Contratos</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle">
+            <thead class="siga-table-header">
+                <tr>
+                    <th scope="col">N° Contrato</th>
+                    <th scope="col">Propiedad</th>
+                    <th scope="col">Inquilino</th>
+                    <th scope="col">Inicio</th>
+                    <th scope="col">Fin</th>
+                    <th scope="col">Alquiler</th>
+                    <th scope="col">Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>118</td>
+                    <td>Casa Corrientes 812</td>
+                    <td>Florencia Martínez</td>
+                    <td>04/07/2025</td>
+                    <td class="fecha-fin">03/07/2027</td>
+                    <td>$730.000</td>
+                    <td class="estado-contrato"></td>
+                </tr>
+                <tr>
+                    <td>130</td>
+                    <td>Depto. Maipú 1700</td>
+                    <td>Alejandro Díaz</td>
+                    <td>01/10/2024</td>
+                    <td class="fecha-fin">30/09/2026</td>
+                    <td>$490.000</td>
+                    <td class="estado-contrato"></td>
+                </tr>
+                <tr>
+                    <td>135</td>
+                    <td>Depto. Buenos Aires 112</td>
+                    <td>Laura Argañaraz</td>
+                    <td>24/06/2025</td>
+                    <td class="fecha-fin">23/06/2027</td>
+                    <td>$325.000</td>
+                    <td class="estado-contrato"></td>
+                </tr>
+                <tr>
+                    <td>138</td>
+                    <td>Casa Moreno 347 (Tafí Viejo)</td>
+                    <td>Gabriel Paz</td>
+                    <td>18/07/2025</td>
+                    <td class="fecha-fin">17/07/2028</td>
+                    <td>$965.000</td>
+                    <td class="estado-contrato"></td>
+                </tr>
+                <tr>
+                    <td>142</td>
+                    <td>Depto. Laprida 590</td>
+                    <td>Diego Sosa</td>
+                    <td>06/10/2025</td>
+                    <td class="fecha-fin">05/10/2027</td>
+                    <td>$605.000</td>
+                    <td class="estado-contrato"></td>
+                </tr>
+                <tr>
+                    <td>148</td>
+                    <td>Casa Catamarca 712 (Tafí Viejo)</td>
+                    <td>Belén Alderete</td>
+                    <td>27/04/2025</td>
+                    <td class="fecha-fin">26/04/2027</td>
+                    <td>$815.000</td>
+                    <td class="estado-contrato"></td>
+                </tr>
+                <tr>
+                    <td>154</td>
+                    <td>Depto. San Martín 1234</td>
+                    <td>María Gómez</td>
+                    <td>01/08/2026</td>
+                    <td class="fecha-fin">31/07/2028</td>
+                    <td>$450.000</td>
+                    <td class="estado-contrato"></td>
+                </tr>
+                <tr>
+                    <td>155</td>
+                    <td>Depto. Maipú 2912</td>
+                    <td>Luis Molina</td>
+                    <td>10/10/2024</td>
+                    <td class="fecha-fin">09/10/2026</td>
+                    <td>$555.000</td>
+                    <td class="estado-contrato"></td>
+                </tr>
+                <tr>
+                    <td>156</td>
+                    <td>Depto. Lavalle 258 (Tafí Viejo)</td>
+                    <td>Patricia Ibáñez</td>
+                    <td>21/05/2025</td>
+                    <td class="fecha-fin">20/05/2027</td>
+                    <td>$480.000</td>
+                    <td class="estado-contrato"></td>
+                </tr>
+                <tr>
+                    <td>157</td>
+                    <td>Casa Lavalle 1866 (Yerba Buena)</td>
+                    <td>Fernando Correa</td>
+                    <td>11/09/2025</td>
+                    <td class="fecha-fin">10/09/2027</td>
+                    <td>$680.000</td>
+                    <td class="estado-contrato"></td>
+                </tr>
+                <tr>
+                    <td>159</td>
+                    <td>Casa Catamarca 2681 (Tafí Viejo)</td>
+                    <td>Patricia Carrizo</td>
+                    <td>17/10/2024</td>
+                    <td class="fecha-fin">16/10/2026</td>
+                    <td>$950.000</td>
+                    <td class="estado-contrato"></td>
+                </tr>
+                <tr>
+                    <td>160</td>
+                    <td>Depto. Lavalle 1581 (Tafí Viejo)</td>
+                    <td>Federico Lazarte</td>
+                    <td>06/12/2025</td>
+                    <td class="fecha-fin">05/12/2028</td>
+                    <td>$490.000</td>
+                    <td class="estado-contrato"></td>
+                </tr>
+                <tr>
+                    <td>164</td>
+                    <td>Casa Independencia 1581 (Yerba Buena)</td>
+                    <td>Gisela Molina</td>
+                    <td>27/01/2026</td>
+                    <td class="fecha-fin">26/01/2029</td>
+                    <td>$995.000</td>
+                    <td class="estado-contrato"></td>
+                </tr>
+                <tr>
+                    <td>166</td>
+                    <td>Casa Av. Alem 581 (Tafí Viejo)</td>
+                    <td>Mariana Sánchez</td>
+                    <td>14/05/2026</td>
+                    <td class="fecha-fin">13/05/2028</td>
+                    <td>$830.000</td>
+                    <td class="estado-contrato"></td>
+                </tr>
+                <tr>
+                    <td>168</td>
+                    <td>Depto. Las Heras 2625 (Yerba Buena)</td>
+                    <td>Belén Vega</td>
+                    <td>20/01/2026</td>
+                    <td class="fecha-fin">19/01/2028</td>
+                    <td>$470.000</td>
+                    <td class="estado-contrato"></td>
+                </tr>
+                <tr>
+                    <td>173</td>
+                    <td>Depto. Marcos Paz 300</td>
+                    <td>Ezequiel Mercado</td>
+                    <td>19/04/2025</td>
+                    <td class="fecha-fin">18/04/2027</td>
+                    <td>$555.000</td>
+                    <td class="estado-contrato"></td>
+                </tr>
+                <tr>
+                    <td>187</td>
+                    <td>Casa Córdoba 2112</td>
+                    <td>Natalia Villagra</td>
+                    <td>08/07/2025</td>
+                    <td class="fecha-fin">07/07/2027</td>
+                    <td>$830.000</td>
+                    <td class="estado-contrato"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
 
-            <section id="propietarios" class="py-5" style="background-color: var(--superficie);">
-                <div class="container">
-                    <h2 class="mb-4">Propietarios e Inquilinos</h2>
-                    <div class="row row-cols-1 row-cols-md-2 g-4">
-                        <div class="col">
-                            <article class="card persona-card h-100 shadow-sm">
-                                <div class="card-body">
-                                    <h3 class="h5 card-title">Juan Pérez</h3>
-                                    <p class="card-text mb-1 text-muted">Propietario</p>
-                                    <p class="card-text mb-1">DNI: 30.123.456</p>
-                                    <p class="card-text mb-0">Tel: 381-1234567</p>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col">
-                            <article class="card persona-card h-100 shadow-sm">
-                                <div class="card-body">
-                                    <h3 class="h5 card-title">María Gómez</h3>
-                                    <p class="card-text mb-1 text-muted">Inquilina</p>
-                                    <p class="card-text mb-1">DNI: 35.987.654</p>
-                                    <p class="card-text mb-0">Tel: 381-7654321</p>
-                                </div>
-                            </article>
-                        </div>
+           <section id="propietarios" class="py-5" style="background-color: var(--superficie);">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+            <h2 class="mb-0">Propietarios e Inquilinos</h2>
+            <div class="input-group" style="max-width: 300px;">
+                <span class="input-group-text bg-white" aria-hidden="true">🔍</span>
+                <input type="text" id="buscador-personas" class="form-control" aria-label="Buscar por nombre o DNI"
+                    placeholder="Buscar por nombre o DNI...">
+            </div>
+        </div>
+        <div class="d-flex gap-2 flex-wrap mb-3">
+            <button class="btn btn-sm btn-primary filtro-persona-btn" data-filtro-persona="todos">Todos</button>
+            <button class="btn btn-sm btn-outline-secondary filtro-persona-btn" data-filtro-persona="propietario">Propietarios</button>
+            <button class="btn btn-sm btn-outline-secondary filtro-persona-btn" data-filtro-persona="inquilino">Inquilinos</button>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="propietario">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Juan Pérez</h3>
+                        <p class="card-text mb-1 text-muted">Propietario</p>
+                        <p class="card-text mb-1">Propiedades: 2</p>
+                        <p class="card-text mb-1">DNI: 30.123.456</p>
+                        <p class="card-text mb-0">Tel: 381-1234567</p>
                     </div>
-                </div>
-            </section>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="propietario">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Nicolás Molina</h3>
+                        <p class="card-text mb-1 text-muted">Propietario</p>
+                        <p class="card-text mb-1">Propiedades: 3</p>
+                        <p class="card-text mb-1">DNI: 27.196.951</p>
+                        <p class="card-text mb-0">Tel: 381-1397615</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="propietario">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Gisela Rojas</h3>
+                        <p class="card-text mb-1 text-muted">Propietaria</p>
+                        <p class="card-text mb-1">Propiedades: 3</p>
+                        <p class="card-text mb-1">DNI: 30.703.892</p>
+                        <p class="card-text mb-0">Tel: 381-1506045</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="propietario">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Paula Navarro</h3>
+                        <p class="card-text mb-1 text-muted">Propietaria</p>
+                        <p class="card-text mb-1">Propiedades: 1</p>
+                        <p class="card-text mb-1">DNI: 29.883.113</p>
+                        <p class="card-text mb-0">Tel: 381-1659085</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="propietario">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Gabriel Martínez</h3>
+                        <p class="card-text mb-1 text-muted">Propietario</p>
+                        <p class="card-text mb-1">Propiedades: 3</p>
+                        <p class="card-text mb-1">DNI: 29.107.751</p>
+                        <p class="card-text mb-0">Tel: 381-1129110</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="propietario">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Rodrigo Toledo</h3>
+                        <p class="card-text mb-1 text-muted">Propietario</p>
+                        <p class="card-text mb-1">Propiedades: 2</p>
+                        <p class="card-text mb-1">DNI: 27.015.203</p>
+                        <p class="card-text mb-0">Tel: 381-1406925</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="propietario">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Gisela Cabrera</h3>
+                        <p class="card-text mb-1 text-muted">Propietaria</p>
+                        <p class="card-text mb-1">Propiedades: 4</p>
+                        <p class="card-text mb-1">DNI: 21.014.888</p>
+                        <p class="card-text mb-0">Tel: 381-1632280</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="propietario">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Natalia Ruiz</h3>
+                        <p class="card-text mb-1 text-muted">Propietaria</p>
+                        <p class="card-text mb-1">Propiedades: 1</p>
+                        <p class="card-text mb-1">DNI: 20.829.496</p>
+                        <p class="card-text mb-0">Tel: 381-1004876</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="propietario">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Florencia Medina</h3>
+                        <p class="card-text mb-1 text-muted">Propietaria</p>
+                        <p class="card-text mb-1">Propiedades: 5</p>
+                        <p class="card-text mb-1">DNI: 27.515.585</p>
+                        <p class="card-text mb-0">Tel: 381-1912808</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="propietario">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Florencia Nieva</h3>
+                        <p class="card-text mb-1 text-muted">Propietaria</p>
+                        <p class="card-text mb-1">Propiedades: 1</p>
+                        <p class="card-text mb-1">DNI: 29.658.945</p>
+                        <p class="card-text mb-0">Tel: 381-1500370</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="propietario">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Rodrigo Ruiz</h3>
+                        <p class="card-text mb-1 text-muted">Propietario</p>
+                        <p class="card-text mb-1">Propiedades: 3</p>
+                        <p class="card-text mb-1">DNI: 29.502.259</p>
+                        <p class="card-text mb-0">Tel: 381-1653845</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="propietario">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Alejandro Toledo</h3>
+                        <p class="card-text mb-1 text-muted">Propietario</p>
+                        <p class="card-text mb-1">Propiedades: 2</p>
+                        <p class="card-text mb-1">DNI: 24.705.233</p>
+                        <p class="card-text mb-0">Tel: 381-1787943</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="inquilino">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Florencia Martínez</h3>
+                        <p class="card-text mb-1 text-muted">Inquilina</p>
+                        <p class="card-text mb-1">Contrato #118</p>
+                        <p class="card-text mb-1">DNI: 37.413.836</p>
+                        <p class="card-text mb-0">Tel: 381-1204842</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="inquilino">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Alejandro Díaz</h3>
+                        <p class="card-text mb-1 text-muted">Inquilino</p>
+                        <p class="card-text mb-1">Contrato #130</p>
+                        <p class="card-text mb-1">DNI: 36.347.914</p>
+                        <p class="card-text mb-0">Tel: 381-1438299</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="inquilino">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Laura Argañaraz</h3>
+                        <p class="card-text mb-1 text-muted">Inquilina</p>
+                        <p class="card-text mb-1">Contrato #135</p>
+                        <p class="card-text mb-1">DNI: 35.045.109</p>
+                        <p class="card-text mb-0">Tel: 381-1651788</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="inquilino">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Gabriel Paz</h3>
+                        <p class="card-text mb-1 text-muted">Inquilino</p>
+                        <p class="card-text mb-1">Contrato #138</p>
+                        <p class="card-text mb-1">DNI: 31.861.565</p>
+                        <p class="card-text mb-0">Tel: 381-1528144</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="inquilino">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Diego Sosa</h3>
+                        <p class="card-text mb-1 text-muted">Inquilino</p>
+                        <p class="card-text mb-1">Contrato #142</p>
+                        <p class="card-text mb-1">DNI: 40.603.162</p>
+                        <p class="card-text mb-0">Tel: 381-1443256</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="inquilino">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Belén Alderete</h3>
+                        <p class="card-text mb-1 text-muted">Inquilina</p>
+                        <p class="card-text mb-1">Contrato #148</p>
+                        <p class="card-text mb-1">DNI: 32.568.110</p>
+                        <p class="card-text mb-0">Tel: 381-1754072</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="inquilino">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">María Gómez</h3>
+                        <p class="card-text mb-1 text-muted">Inquilina</p>
+                        <p class="card-text mb-1">Contrato #154</p>
+                        <p class="card-text mb-1">DNI: 35.987.654</p>
+                        <p class="card-text mb-0">Tel: 381-7654321</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="inquilino">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Luis Molina</h3>
+                        <p class="card-text mb-1 text-muted">Inquilino</p>
+                        <p class="card-text mb-1">Contrato #155</p>
+                        <p class="card-text mb-1">DNI: 40.259.296</p>
+                        <p class="card-text mb-0">Tel: 381-1116494</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="inquilino">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Patricia Ibáñez</h3>
+                        <p class="card-text mb-1 text-muted">Inquilina</p>
+                        <p class="card-text mb-1">Contrato #156</p>
+                        <p class="card-text mb-1">DNI: 24.394.399</p>
+                        <p class="card-text mb-0">Tel: 381-1031450</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="inquilino">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Fernando Correa</h3>
+                        <p class="card-text mb-1 text-muted">Inquilino</p>
+                        <p class="card-text mb-1">Contrato #157</p>
+                        <p class="card-text mb-1">DNI: 25.492.470</p>
+                        <p class="card-text mb-0">Tel: 381-1288375</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="inquilino">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Patricia Carrizo</h3>
+                        <p class="card-text mb-1 text-muted">Inquilina</p>
+                        <p class="card-text mb-1">Contrato #159</p>
+                        <p class="card-text mb-1">DNI: 28.058.026</p>
+                        <p class="card-text mb-0">Tel: 381-1883579</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="inquilino">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Federico Lazarte</h3>
+                        <p class="card-text mb-1 text-muted">Inquilino</p>
+                        <p class="card-text mb-1">Contrato #160</p>
+                        <p class="card-text mb-1">DNI: 28.281.009</p>
+                        <p class="card-text mb-0">Tel: 381-1645154</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="inquilino">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Gisela Molina</h3>
+                        <p class="card-text mb-1 text-muted">Inquilina</p>
+                        <p class="card-text mb-1">Contrato #164</p>
+                        <p class="card-text mb-1">DNI: 29.930.519</p>
+                        <p class="card-text mb-0">Tel: 381-1373556</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="inquilino">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Mariana Sánchez</h3>
+                        <p class="card-text mb-1 text-muted">Inquilina</p>
+                        <p class="card-text mb-1">Contrato #166</p>
+                        <p class="card-text mb-1">DNI: 29.730.347</p>
+                        <p class="card-text mb-0">Tel: 381-1419689</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="inquilino">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Belén Vega</h3>
+                        <p class="card-text mb-1 text-muted">Inquilina</p>
+                        <p class="card-text mb-1">Contrato #168</p>
+                        <p class="card-text mb-1">DNI: 26.650.396</p>
+                        <p class="card-text mb-0">Tel: 381-1838012</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="inquilino">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Ezequiel Mercado</h3>
+                        <p class="card-text mb-1 text-muted">Inquilino</p>
+                        <p class="card-text mb-1">Contrato #173</p>
+                        <p class="card-text mb-1">DNI: 41.860.081</p>
+                        <p class="card-text mb-0">Tel: 381-1479188</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card persona-card h-100 shadow-sm" data-tipo="inquilino">
+                    <div class="card-body">
+                        <h3 class="h5 card-title">Natalia Villagra</h3>
+                        <p class="card-text mb-1 text-muted">Inquilina</p>
+                        <p class="card-text mb-1">Contrato #187</p>
+                        <p class="card-text mb-1">DNI: 30.668.409</p>
+                        <p class="card-text mb-0">Tel: 381-1548643</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
 
             <section id="pagos" class="container py-5">
                 <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
                     <h2 class="mb-0">Pagos y Vencimientos</h2>
-                    <span id="contador-pendientes" class="badge bg-danger">1 pendiente</span>
+                    <span id="contador-pendientes" class="badge bg-danger">5 pendientes</span>
                 </div>
                 <ul class="list-group">
-                    <li class="list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
-                        <span>Contrato #154 — Agosto</span>
-                        <span class="fecha-pago">Vence: 10/08/2026</span>
+                    <li class="pago list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+                        <span>Contrato #118 — Septiembre</span>
+                        <span class="fecha-pago">Pagado: 05/09/2026</span>
+                        <span class="badge bg-success">Pagado</span>
+                    </li>
+                    <li class="pago pendiente list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+                        <span>Contrato #130 — Septiembre</span>
+                        <span class="fecha-pago">Vence: 15/09/2026</span>
                         <span class="badge bg-danger">Pendiente</span>
                         <button type="button" class="btn btn-sm btn-outline-success btn-pagar">Marcar como
                             pagado</button>
                     </li>
-                    <li class="list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
-                        <span>Contrato #145 — Julio</span>
-                        <span class="fecha-pago">Pagado: 08/07/2026</span>
+                    <li class="pago pendiente list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+                        <span>Contrato #135 — Septiembre</span>
+                        <span class="fecha-pago">Vence: 15/09/2026</span>
+                        <span class="badge bg-danger">Pendiente</span>
+                        <button type="button" class="btn btn-sm btn-outline-success btn-pagar">Marcar como
+                            pagado</button>
+                    </li>
+                    <li class="pago list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+                        <span>Contrato #138 — Septiembre</span>
+                        <span class="fecha-pago">Pagado: 02/09/2026</span>
                         <span class="badge bg-success">Pagado</span>
+                    </li>
+                    <li class="pago list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+                        <span>Contrato #142 — Septiembre</span>
+                        <span class="fecha-pago">Pagado: 04/09/2026</span>
+                        <span class="badge bg-success">Pagado</span>
+                    </li>
+                    <li class="pago pendiente list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+                        <span>Contrato #148 — Septiembre</span>
+                        <span class="fecha-pago">Vence: 05/09/2026</span>
+                        <span class="badge bg-danger">Pendiente</span>
+                        <button type="button" class="btn btn-sm btn-outline-success btn-pagar">Marcar como
+                            pagado</button>
+                    </li>
+                    <li class="pago pendiente list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+                        <span>Contrato #154 — Septiembre</span>
+                        <span class="fecha-pago">Vence: 10/09/2026</span>
+                        <span class="badge bg-danger">Pendiente</span>
+                        <button type="button" class="btn btn-sm btn-outline-success btn-pagar">Marcar como
+                            pagado</button>
+                    </li>
+                    <li class="pago list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+                        <span>Contrato #155 — Septiembre</span>
+                        <span class="fecha-pago">Pagado: 04/09/2026</span>
+                        <span class="badge bg-success">Pagado</span>
+                    </li>
+                    <li class="pago list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+                        <span>Contrato #156 — Septiembre</span>
+                        <span class="fecha-pago">Pagado: 09/09/2026</span>
+                        <span class="badge bg-success">Pagado</span>
+                    </li>
+                    <li class="pago list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+                        <span>Contrato #157 — Septiembre</span>
+                        <span class="fecha-pago">Pagado: 03/09/2026</span>
+                        <span class="badge bg-success">Pagado</span>
+                    </li>
+                    <li class="pago list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+                        <span>Contrato #159 — Septiembre</span>
+                        <span class="fecha-pago">Pagado: 04/09/2026</span>
+                        <span class="badge bg-success">Pagado</span>
+                    </li>
+                    <li class="pago list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+                        <span>Contrato #160 — Septiembre</span>
+                        <span class="fecha-pago">Pagado: 08/09/2026</span>
+                        <span class="badge bg-success">Pagado</span>
+                    </li>
+                    <li class="pago list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+                        <span>Contrato #164 — Septiembre</span>
+                        <span class="fecha-pago">Pagado: 09/09/2026</span>
+                        <span class="badge bg-success">Pagado</span>
+                    </li>
+                    <li class="pago list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+                        <span>Contrato #166 — Septiembre</span>
+                        <span class="fecha-pago">Pagado: 06/09/2026</span>
+                        <span class="badge bg-success">Pagado</span>
+                    </li>
+                    <li class="pago list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+                        <span>Contrato #168 — Septiembre</span>
+                        <span class="fecha-pago">Pagado: 09/09/2026</span>
+                        <span class="badge bg-success">Pagado</span>
+                    </li>
+                    <li class="pago list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+                        <span>Contrato #173 — Septiembre</span>
+                        <span class="fecha-pago">Pagado: 12/09/2026</span>
+                        <span class="badge bg-success">Pagado</span>
+                    </li>
+                    <li class="pago pendiente list-group-item d-flex flex-wrap justify-content-between align-items-center gap-2">
+                        <span>Contrato #187 — Septiembre</span>
+                        <span class="fecha-pago">Vence: 15/09/2026</span>
+                        <span class="badge bg-danger">Pendiente</span>
+                        <button type="button" class="btn btn-sm btn-outline-success btn-pagar">Marcar como
+                            pagado</button>
                     </li>
                 </ul>
             </section>
@@ -248,28 +1310,34 @@
                     </p>
 
                     <div class="row row-cols-1 row-cols-md-3 g-3 my-2">
-                        <div class="col">
-                            <article class="card persona-card h-100 shadow-sm text-center">
-                                <div class="card-body">
-                                    <h3 class="h6 card-title mb-0">Esteban Nájera</h3>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col">
-                            <article class="card persona-card h-100 shadow-sm text-center">
-                                <div class="card-body">
-                                    <h3 class="h6 card-title mb-0">Magali Guerrero</h3>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col">
-                            <article class="card persona-card h-100 shadow-sm text-center">
-                                <div class="card-body">
-                                    <h3 class="h6 card-title mb-0">Claudia Lopez</h3>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
+    <div class="col">
+        <article class="card persona-card h-100 shadow-sm text-center">
+            <div class="card-body">
+                <img src="img/esteban.jpeg" loading="lazy" alt="Esteban Nájera"
+                    class="rounded-circle mb-2" width="150" height="150" style="object-fit: cover;">
+                <h3 class="h6 card-title mb-0">Esteban Nájera</h3>
+            </div>
+        </article>
+    </div>
+    <div class="col">
+        <article class="card persona-card h-100 shadow-sm text-center">
+            <div class="card-body">
+                <img src="img/maga.jpeg" loading="lazy" alt="Magali Guerrero"
+                    class="rounded-circle mb-2" width="150" height="150" style="object-fit: cover;">
+                <h3 class="h6 card-title mb-0">Magali Guerrero</h3>
+            </div>
+        </article>
+    </div>
+    <div class="col">
+        <article class="card persona-card h-100 shadow-sm text-center">
+            <div class="card-body">
+                <img src="img/clau.jpeg" loading="lazy" alt="Claudia Lopez"
+                    class="rounded-circle mb-2" width="150" height="150" style="object-fit: cover;">
+                <h3 class="h6 card-title mb-0">Claudia Lopez</h3>
+            </div>
+        </article>
+    </div>
+</div>
 
                     <p class="mb-0">
                         <em>Agradecemos a la profesora Georgina Costilla, docente
@@ -280,10 +1348,15 @@
             </section>
         </main>
 
-        <footer class="text-center py-4">
-            <p class="mb-0">&copy; 2026 SIGA — Todos los derechos reservados</p>
-        </footer>
+     <footer class="text-center py-3 siga-footer">
+    <p class="mb-0">&copy; <span id="anio-actual">2026</span> SIGA — Todos los derechos reservados</p>
+</footer>
 
+<button id="btn-scroll-top" type="button" class="btn-scroll-top" aria-label="Volver arriba">
+    ↑
+</button>
+
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
