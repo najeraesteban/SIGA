@@ -3,8 +3,8 @@
 ## Integrantes
 
 - Esteban Nájera
-- Magui Guerrero
-- Claudia López
+- Magali Guerrero
+- Claudia Lopez
 
 **Institución:** Universidad Tecnológica Nacional — Facultad Regional Tucumán (UTN FRT)
 **Carrera:** Tecnicatura/Ingeniería en Programación
@@ -28,7 +28,9 @@ El sistema contempla dos roles de usuario:
 ## Tecnologías utilizadas
 
 - HTML5 semántico
-- CSS3 (Flexbox, Grid, variables CSS, Media Queries)
+- CSS3 (Flexbox, variables CSS, Media Queries)
+- Bootstrap 5.3 (sistema de grilla, componentes y utilidades)
+- JavaScript (manipulación del DOM: buscadores, filtros y estados de pago)
 - Git y GitHub para control de versiones y trabajo colaborativo
 
 ## ¿Dónde utilizaron Flexbox?
@@ -39,9 +41,11 @@ flexible según el ancho de pantalla.
 
 ## ¿Dónde utilizaron Grid?
 
-En el **Dashboard** (resumen general) y en las secciones de **Propiedades**
-y **Propietarios**, para distribuir tarjetas en columnas que se adaptan
-automáticamente según el espacio disponible.
+Se utilizó el sistema de grilla de Bootstrap (`row` y `row-cols-*`) en el
+**Dashboard** (resumen general) y en las secciones de **Propiedades**,
+**Propietarios e Inquilinos** y **Sobre Nosotros**, para distribuir tarjetas en
+columnas que se adaptan automáticamente según el ancho de pantalla. La grilla
+de Bootstrap 5 funciona internamente con Flexbox.
 
 ## ¿Qué variables CSS crearon?
 
@@ -52,9 +56,24 @@ layout (`--ancho-nav`, `--radio-borde`, `--sombra-card`), definidas en
 
 ## ¿Cómo implementaron el Responsive Design?
 
-Mediante Media Queries en los breakpoints de 860px (donde la barra lateral
-fija pasa a ser una barra horizontal) y 480px (ajustes de tipografía y
-disposición para celulares).
+Combinando las clases responsive de Bootstrap (`row-cols-*`, `d-md-*`) con
+Media Queries propias en los breakpoints de 768px (a partir de ahí se muestra
+la barra lateral fija y el contenido se desplaza a la derecha; por debajo se
+usa una barra superior con menú desplegable) y 576px (ajuste de espaciado en la
+sección Sobre Nosotros para celulares).
+
+## SEO
+
+- Atributo `lang="es"` en la etiqueta `<html>`.
+- `<title>` descriptivo, con las palabras clave del sistema.
+- `<meta name="description">` con un resumen de lo que ofrece SIGA.
+- Metaetiquetas `robots` (`index, follow`) y `author`.
+- Jerarquía de encabezados ordenada: un único `<h1>`, `<h2>` para las
+  secciones y `<h3>` para las tarjetas.
+- HTML semántico (`header`, `nav`, `main`, `section`, `article`, `footer`).
+- Texto alternativo (`alt`) descriptivo en todas las imágenes.
+- Carga diferida de imágenes (`loading="lazy"`) y fuentes con `preconnect` y
+  `display=swap` para mejorar el rendimiento.
 
 ## Estructura del proyecto
 
@@ -62,6 +81,7 @@ disposición para celulares).
 SIGA/
 ├── img/
 ├── style.css
+├── script.js
 ├── index.html
 └── README.md
 ```
